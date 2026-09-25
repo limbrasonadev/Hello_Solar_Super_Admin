@@ -1,0 +1,2584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello Solar - Super Admin</title>
+  <link rel="icon" type="image/png" href="assets/images/logofortab.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="app-shell">
+    <!-- Desktop Collapsible & Mobile Slide-Out Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-header-main">
+          <a href="#overview" class="logo brand" data-go="overview" title="Hello Solar Super Admin">
+            <img class="brand-logo" src="assets/images/hello_solar.png" alt="Hello Solar" />
+          </a>
+          <button class="sidebar-toggle-btn" id="sidebarCollapseBtn" title="Hide Sidebar" aria-label="Toggle Sidebar">
+            <img class="toggle-icon-collapse" src="assets/images/hidesidebar.png" alt="Hide Sidebar" />
+            <img class="toggle-icon-expand" src="assets/images/showsidebar.png" alt="Show Sidebar" />
+          </button>
+        </div>
+        <div class="portal-tag">Super Admin</div>
+      </div>
+
+      <div class="nav-container">
+        <div class="nav-section-title">Overview</div>
+        <button class="nav-link active" data-page="overview" title="Overview">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="9" rx="1.5"></rect>
+              <rect x="14" y="3" width="7" height="5" rx="1.5"></rect>
+              <rect x="14" y="12" width="7" height="9" rx="1.5"></rect>
+              <rect x="3" y="16" width="7" height="5" rx="1.5"></rect>
+            </svg>
+          </span>
+          <span class="nav-text">Overview</span>
+        </button>
+
+        <div class="nav-section-title">Operations</div>
+        <button class="nav-link" data-page="applications" title="Applications">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </span>
+          <span class="nav-text">Applications</span>
+          <span class="nav-badge" id="navBadgeApps">12</span>
+        </button>
+        <button class="nav-link" data-page="installations" title="Installations">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </span>
+          <span class="nav-text">Installations</span>
+          <span class="nav-badge" id="navBadgeInstalls">7</span>
+        </button>
+        <button class="nav-link" data-page="accounts" title="Accounts">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </span>
+          <span class="nav-text">Accounts</span>
+        </button>
+        <button class="nav-link" data-page="payments" title="Payments">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+              <line x1="2" y1="10" x2="22" y2="10"></line>
+              <line x1="6" y1="15" x2="10" y2="15"></line>
+            </svg>
+          </span>
+          <span class="nav-text">Payments</span>
+        </button>
+
+        <div class="nav-section-title">Management</div>
+        <button class="nav-link" data-page="support" title="Support">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M3 11a9 9 0 0 1 18 0"></path>
+              <path d="M3 11v4a2 2 0 0 0 2 2h2v-6H5a2 2 0 0 0-2 2"></path>
+              <path d="M21 11v4a2 2 0 0 1-2 2h-2v-6h2a2 2 0 0 1 2 2"></path>
+              <path d="M17 17c0 2-2 3-5 3"></path>
+            </svg>
+          </span>
+          <span class="nav-text">Support</span>
+          <span class="nav-badge warn" id="navBadgeSupport">5</span>
+        </button>
+        <button class="nav-link" data-page="activity" title="Activity Logs">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </span>
+          <span class="nav-text">Activity</span>
+        </button>
+
+        <div class="nav-section-title">System</div>
+        <button class="nav-link" data-page="settings" title="Settings">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+              </path>
+            </svg>
+          </span>
+          <span class="nav-text">Settings</span>
+        </button>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="system-status">
+          <span class="status-pulse"></span>
+          <span>System Connected</span>
+        </div>
+        <p class="footer-sub">Customer • Financer • Installer • Merchant</p>
+      </div>
+    </aside>
+
+    <!-- Mobile Overlay Backdrop -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- Main Content Shell -->
+    <div class="main-wrapper">
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <a class="mobile-logo" href="#overview" data-go="overview" aria-label="Hello Solar">
+            <img src="assets/images/hello_solar.png" alt="Hello Solar">
+          </a>
+          <div class="search-box">
+            <span class="search-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input type="search" class="search-input" id="globalSearchInput"
+              placeholder="Search application, customer, project ID..." autocomplete="off" />
+            <kbd class="kbd-shortcut">/</kbd>
+            <div class="search-results-popover" id="searchResultsPopover"></div>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Quick Direct Install Shortcut -->
+          <div class="direct-quick-badge" id="quickDirectBtn" title="View Hello Solar Direct installations">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span id="quickDirectCount">3 Direct Projects</span>
+          </div>
+
+          <!-- Notification Bell -->
+          <div class="icon-btn-wrap">
+            <button class="top-icon-btn" id="notifBellBtn" title="Issues requiring action">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+              <span class="notif-badge" id="notifBadgeCount">5</span>
+            </button>
+            <div class="notif-popover" id="notifPopover">
+              <div class="notif-head">
+                <h3>Needs Immediate Action</h3>
+                <span class="count-pill" id="notifHeadCount">5</span>
+              </div>
+              <div class="notif-list" id="notifList"></div>
+            </div>
+          </div>
+
+          <!-- Profile -->
+          <div class="user-profile-wrap" id="userProfileWrap">
+            <div class="user-profile" id="userProfileBtn" title="Super Admin Account">
+              <div class="user-avatar">SA</div>
+              <div class="user-info">
+                <span class="user-name">Limuel Brasona</span>
+                <span class="user-role">Super Admin</span>
+              </div>
+              <svg class="user-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+            <div class="user-dropdown" id="userDropdown">
+              <div class="user-dropdown-header">
+                <div class="user-avatar" style="width:40px;height:40px;font-size:14px;">SA</div>
+                <div>
+                  <div class="user-dropdown-name">Limuel Brasona</div>
+                  <div class="user-dropdown-role">Super Admin</div>
+                </div>
+              </div>
+              <div class="user-dropdown-divider"></div>
+              <button class="user-dropdown-item" data-dropdown-go="settings" id="dropdownProfile">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Profile & Settings
+              </button>
+              <button class="user-dropdown-item" data-dropdown-go="activity" id="dropdownActivity">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Activity Logs
+              </button>
+              <div class="user-dropdown-divider"></div>
+              <button class="user-dropdown-item user-dropdown-logout" id="dropdownLogout">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Views -->
+      <main class="content">
+
+        <!-- 1. OVERVIEW PAGE -->
+        <section class="page active" id="page-overview">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">COMMAND CENTER</div>
+              <h1>Overview</h1>
+              <p>Key operations pulse across the Hello Solar ecosystem and prioritized issues requiring action.</p>
+            </div>
+          </div>
+
+          <!-- Main 5 KPI Cards -->
+          <section class="kpi-grid">
+            <article class="kpi-card" data-go="applications">
+              <div class="kpi-top">
+                <span>Total Applications</span>
+                <div class="kpi-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="kpi-value" id="kpiTotalApps">12</div>
+              <div class="kpi-foot">
+                <span>Across all lifecycle stages</span>
+                <span class="kpi-action-link">View →</span>
+              </div>
+            </article>
+
+            <article class="kpi-card" data-go="installations" data-sub="active">
+              <div class="kpi-top">
+                <span>Active Installations</span>
+                <div class="kpi-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+              </div>
+              <div class="kpi-value" id="kpiActiveInstalls">4</div>
+              <div class="kpi-foot">
+                <span>Scheduled, testing & in progress</span>
+                <span class="kpi-action-link">View →</span>
+              </div>
+            </article>
+
+            <article class="kpi-card" data-go="installations" data-sub="completed">
+              <div class="kpi-top">
+                <span>Completed Installations</span>
+                <div class="kpi-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="kpi-value" id="kpiCompletedInstalls">2</div>
+              <div class="kpi-foot">
+                <span>Commissioned & energized</span>
+                <span class="kpi-action-link">View →</span>
+              </div>
+            </article>
+
+            <article class="kpi-card" data-go="payments">
+              <div class="kpi-top">
+                <span>Total Funded Value</span>
+                <div class="kpi-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                    <line x1="6" y1="15" x2="10" y2="15"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="kpi-value" id="kpiTotalFunded">₱4.82M</div>
+              <div class="kpi-foot">
+                <span>Approved solar loans & financing</span>
+                <span class="kpi-action-link">View →</span>
+              </div>
+            </article>
+
+            <article class="kpi-card attention-card" id="kpiAttentionCard">
+              <div class="kpi-top">
+                <span>Needs Attention</span>
+                <div class="kpi-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="kpi-value" id="kpiNeedsAttention">5</div>
+              <div class="kpi-foot">
+                <span>Actionable items across portals</span>
+                <span class="kpi-action-link attention-link">Inspect →</span>
+              </div>
+            </article>
+          </section>
+
+          <!-- Operations Overview Grid -->
+          <section style="margin-bottom: 24px;">
+            <div class="panel-head">
+              <div>
+                <h2>Operations Overview</h2>
+                <p>Compact operational health from each connected portal.</p>
+              </div>
+            </div>
+
+            <div class="ops-grid">
+              <!-- Customers Summary -->
+              <div class="ops-card" data-go="accounts" data-tab="customers">
+                <div class="ops-head">
+                  <div class="ops-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  </div>
+                  <div class="ops-title">Customers</div>
+                </div>
+                <div class="ops-metric">
+                  <span>Total Accounts</span>
+                  <strong id="opsCustomerTotal">8</strong>
+                </div>
+                <div class="ops-metric">
+                  <span>New Applications</span>
+                  <strong id="opsCustomerNew">3</strong>
+                </div>
+                <div class="ops-link">
+                  <span>View Customers</span>
+                  <span>→</span>
+                </div>
+              </div>
+
+              <!-- Financers Summary -->
+              <div class="ops-card" data-go="applications" data-sub="under-review">
+                <div class="ops-head">
+                  <div class="ops-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="3" y1="21" x2="21" y2="21"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                      <polyline points="5 6 12 3 19 6"></polyline>
+                      <line x1="4" y1="10" x2="4" y2="21"></line>
+                      <line x1="20" y1="10" x2="20" y2="21"></line>
+                      <line x1="8" y1="14" x2="8" y2="17"></line>
+                      <line x1="12" y1="14" x2="12" y2="17"></line>
+                      <line x1="16" y1="14" x2="16" y2="17"></line>
+                    </svg>
+                  </div>
+                  <div class="ops-title">Financers</div>
+                </div>
+                <div class="ops-metric">
+                  <span>Under Review</span>
+                  <strong id="opsFinancerReview">2</strong>
+                </div>
+                <div class="ops-metric">
+                  <span>Awaiting Decisions</span>
+                  <strong id="opsFinancerPending">3</strong>
+                </div>
+                <div class="ops-link">
+                  <span>View Financer Activity</span>
+                  <span>→</span>
+                </div>
+              </div>
+
+              <!-- Installers Summary -->
+              <div class="ops-card" data-go="installations">
+                <div class="ops-head">
+                  <div class="ops-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="ops-title">Installers</div>
+                </div>
+                <div class="ops-metric">
+                  <span>Active Jobs</span>
+                  <strong id="opsInstallerActive">4</strong>
+                </div>
+                <div class="ops-metric">
+                  <span>Maintenance Jobs</span>
+                  <strong id="opsInstallerMaint">1</strong>
+                </div>
+                <div class="ops-link">
+                  <span>View Installer Jobs</span>
+                  <span>→</span>
+                </div>
+              </div>
+
+              <!-- Merchants Summary -->
+              <div class="ops-card" data-go="accounts" data-tab="merchants">
+                <div class="ops-head">
+                  <div class="ops-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2Z"></path>
+                      <line x1="3" y1="6" x2="21" y2="6"></line>
+                      <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                  </div>
+                  <div class="ops-title">Merchants</div>
+                </div>
+                <div class="ops-metric">
+                  <span>Active Merchants</span>
+                  <strong id="opsMerchantActive">3</strong>
+                </div>
+                <div class="ops-metric">
+                  <span>Pending Requests</span>
+                  <strong id="opsMerchantPending">1</strong>
+                </div>
+                <div class="ops-link">
+                  <span>View Merchants</span>
+                  <span>→</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Compact Needs Attention Section (Grouped by Applications, Installations, Payments, Support) -->
+          <section id="needsAttentionSection" style="margin-bottom: 24px;">
+            <div class="panel">
+              <div class="panel-head">
+                <div>
+                  <h2>Needs Attention <span class="count-pill" id="overviewAttentionCount">5</span></h2>
+                  <p>Prioritized actionable issues grouped across Applications, Installations, Payments, and Support.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Category filter tabs for the 4 workflow groups -->
+              <div class="filter-tabs" id="overviewAttentionFilterTabs">
+                <button class="chip-btn active" data-source="All">All Issues (<span id="attCountAll">0</span>)</button>
+                <button class="chip-btn" data-source="Application">Applications (<span
+                    id="attCountApps">0</span>)</button>
+                <button class="chip-btn" data-source="Installation">Installations (<span
+                    id="attCountInst">0</span>)</button>
+                <button class="chip-btn" data-source="Payment">Payments (<span id="attCountPay">0</span>)</button>
+                <button class="chip-btn" data-source="Support">Support (<span id="attCountSupp">0</span>)</button>
+              </div>
+
+              <div class="attention-list" id="overviewAttentionList"></div>
+            </div>
+          </section>
+
+          <!-- Small Recent Activity Section -->
+          <section id="recentActivitySection" style="margin-bottom: 28px;">
+            <div class="panel">
+              <div class="panel-head">
+                <div>
+                  <h2>Recent Activity</h2>
+                  <p>Latest important system events across all portals.</p>
+                </div>
+                <button class="btn btn-secondary btn-sm" data-go="activity">View All Activity ↗</button>
+              </div>
+
+              <div class="filter-tabs" id="overviewActivityFilterTabs">
+                <button class="chip-btn active" data-filter="All">All</button>
+                <button class="chip-btn" data-filter="Admin">Admin</button>
+                <button class="chip-btn" data-filter="Financer">Financer</button>
+                <button class="chip-btn" data-filter="Installer">Installer</button>
+                <button class="chip-btn" data-filter="Customer">Customer</button>
+              </div>
+
+              <div class="activity-stream" id="overviewActivityList"></div>
+            </div>
+          </section>
+        </section>
+
+        <!-- 2. APPLICATIONS PAGE -->
+        <section class="page" id="page-applications">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">OPERATIONS / LIFECYCLE MANAGEMENT</div>
+              <h1>Applications</h1>
+              <p>End-to-end governance: Submitted → Document Review → Financer Review → Approved/Declined → Installer
+                Assignment → Installation.</p>
+            </div>
+            <div class="page-actions">
+              <span class="direct-quick-badge" title="Accept eligible projects directly">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>Direct Install available for internal execution</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Lifecycle Filters -->
+          <div class="toolbar-wrap">
+            <div class="filter-tabs" id="appFilterChips">
+              <button class="chip-btn active" data-stage="All">All (<span id="countAppAll">12</span>)</button>
+              <button class="chip-btn" data-stage="Submitted">Submitted (<span id="countAppSubmitted">1</span>)</button>
+              <button class="chip-btn" data-stage="Missing Documents">Missing Documents (<span
+                  id="countAppMissing">1</span>)</button>
+              <button class="chip-btn" data-stage="Under Review">Under Review (<span
+                  id="countAppReview">1</span>)</button>
+              <button class="chip-btn" data-stage="Approved">Approved (<span id="countAppApproved">4</span>)</button>
+              <button class="chip-btn" data-stage="Ready for Installation">Ready for Installation (<span
+                  id="countAppReady">4</span>)</button>
+              <button class="chip-btn" data-stage="Declined">Declined (<span id="countAppDeclined">1</span>)</button>
+            </div>
+
+            <div class="filter-group">
+              <input type="search" class="input-field" id="appSearchInput"
+                placeholder="Filter by ID, Customer, Location..." />
+              <select class="input-field" id="appFinancerFilter">
+                <option value="All">All Financers</option>
+                <option value="SunFund Philippines">SunFund</option>
+                <option value="BDO Green Energy Financing">BDO</option>
+                <option value="UnionBank Solar Loan Program">UnionBank</option>
+                <option value="Maya Bank Sustainable Energy">Maya Bank</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Applications Table -->
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Application ID</th>
+                  <th>Location</th>
+                  <th>Customer</th>
+                  <th>Current Stage</th>
+                  <th>Financer</th>
+                  <th>Installer</th>
+                  <th>Updated</th>
+                  <th style="text-align: right;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="appTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 3. INSTALLATIONS PAGE -->
+        <section class="page" id="page-installations">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">OPERATIONS / SOLAR PROJECTS</div>
+              <h1>Installations</h1>
+              <p>Central monitoring for Partner Installer jobs, Hello Solar Direct Installations, and Maintenance tasks.
+              </p>
+            </div>
+            <div class="page-actions">
+              <button class="btn btn-primary" id="btnNewInstallModalOpen">
+                <span>+</span> Schedule Ready Project
+              </button>
+            </div>
+          </div>
+
+          <!-- Installations Tabs & Filters -->
+          <div class="toolbar-wrap">
+            <div class="filter-tabs" id="installFilterTabs">
+              <button class="chip-btn active" data-type="All">All Projects</button>
+              <button class="chip-btn" data-type="Partner Installer">Partner Installer</button>
+              <button class="chip-btn" data-type="Hello Solar Direct">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"
+                  style="display:inline-block; vertical-align:-2px; margin-right:4px;">
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>Hello Solar Direct
+              </button>
+              <button class="chip-btn" data-type="Maintenance">Maintenance</button>
+              <button class="chip-btn" data-type="Completed">Completed</button>
+            </div>
+
+            <div class="filter-group">
+              <input type="search" class="input-field" id="installSearchInput"
+                placeholder="Search project, applicant, installer..." />
+              <select class="input-field" id="installStatusSelect">
+                <option value="All">All Statuses</option>
+                <option value="Scheduled">Scheduled</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Testing">Testing</option>
+                <option value="Delayed">Delayed</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Installations Table -->
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Project / App ID</th>
+                  <th>Location</th>
+                  <th>System Size</th>
+                  <th>Assigned Installer</th>
+                  <th>Installation Type</th>
+                  <th>Status</th>
+                  <th>Schedule</th>
+                  <th style="text-align: right;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="installTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 4. ACCOUNTS PAGE -->
+        <section class="page" id="page-accounts">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">OPERATIONS / STAKEHOLDER MANAGEMENT</div>
+              <h1>Accounts</h1>
+              <p>Unified directory for Customers, Financers, Installers, and Merchants.</p>
+            </div>
+            <div class="page-actions">
+              <button class="btn btn-secondary" id="btnExportAccounts">Export Directory</button>
+            </div>
+          </div>
+
+          <!-- Subtabs for Account Types -->
+          <div class="subtabs-bar" id="accountSubtabs">
+            <button class="subtab active" data-tab="customers">Customers (<span id="accountCountCust">9</span>)</button>
+            <button class="subtab" data-tab="financers">Financers (<span id="accountCountFin">4</span>)</button>
+            <button class="subtab" data-tab="installers">Installers (<span id="accountCountInst">5</span>)</button>
+            <button class="subtab" data-tab="merchants">Merchants (<span id="accountCountMerch">4</span>)</button>
+          </div>
+
+          <!-- Toolbar -->
+          <div class="toolbar-wrap">
+            <div class="filter-group">
+              <input type="search" class="input-field" id="accountSearchInput" placeholder="Search accounts..."
+                style="min-width: 240px;" />
+              <select class="input-field" id="accountStatusFilter">
+                <option value="All">All Statuses</option>
+                <option value="Active">Active</option>
+                <option value="Pending Review">Pending Review</option>
+                <option value="Inactive">Inactive</option>
+                <option value="Suspended">Suspended</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Dynamic Accounts Table -->
+          <div class="table-container">
+            <table id="accountsTable">
+              <thead id="accountsTableHead"></thead>
+              <tbody id="accountsTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 5. PAYMENTS PAGE -->
+        <section class="page" id="page-payments">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">OPERATIONS / FINANCIAL MONITORING</div>
+              <h1>Payments</h1>
+              <p>Monitor financed solar project repayments, amortization schedules, and collection health.</p>
+            </div>
+          </div>
+
+          <!-- Payment KPI summary banner -->
+          <div class="ops-grid" style="margin-bottom: 24px;">
+            <div class="ops-card">
+              <div class="ops-head">
+                <div class="ops-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
+                    <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
+                    <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
+                  </svg>
+                </div>
+                <div class="ops-title">Total Financed Capital</div>
+              </div>
+              <div class="ops-metric">
+                <span>Active Financed Capital</span>
+                <strong id="payTotalVolume">₱7,240,000</strong>
+              </div>
+              <div class="ops-metric">
+                <span>Active Accounts</span>
+                <strong id="payActiveCount">12</strong>
+              </div>
+            </div>
+
+            <div class="ops-card">
+              <div class="ops-head">
+                <div class="ops-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </div>
+                <div class="ops-title">Expected This Month</div>
+              </div>
+              <div class="ops-metric">
+                <span>Expected Monthly Amort.</span>
+                <strong id="payMonthlyExpected">₱166,200</strong>
+              </div>
+              <div class="ops-metric">
+                <span>Collections Received (MTD)</span>
+                <strong id="payReceivedThisMonth">₱79,200</strong>
+              </div>
+            </div>
+
+            <div class="ops-card">
+              <div class="ops-head">
+                <div class="ops-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+                <div class="ops-title">Repayment Health</div>
+              </div>
+              <div class="ops-metric">
+                <span>Accounts Current</span>
+                <strong id="payOnTimePercent" style="color:var(--success)">83%</strong>
+              </div>
+              <div class="ops-metric">
+                <span>Due in Next 7 Days</span>
+                <strong id="payDueSoonCount">3</strong>
+              </div>
+            </div>
+
+            <div class="ops-card">
+              <div class="ops-head">
+                <div class="ops-icon" style="color:var(--danger)">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                </div>
+                <div class="ops-title">Overdue Accounts</div>
+              </div>
+              <div class="ops-metric">
+                <span>Overdue Accounts</span>
+                <strong id="payOverdueCount" style="color:var(--danger)">2</strong>
+              </div>
+              <div class="ops-metric">
+                <span>Action Status</span>
+                <strong id="payOverdueActionStatus">2 accounts flagged</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payments Toolbar -->
+          <div class="toolbar-wrap">
+            <div class="filter-tabs" id="paymentFilterTabs">
+              <button class="chip-btn active" data-status="All">All</button>
+              <button class="chip-btn" data-status="On Time">On Time</button>
+              <button class="chip-btn" data-status="Due Soon">Due Soon</button>
+              <button class="chip-btn" data-status="Overdue">Overdue</button>
+              <button class="chip-btn" data-status="Completed">Completed</button>
+            </div>
+
+            <div class="filter-group">
+              <input type="search" class="input-field" id="paymentSearchInput" placeholder="Search payments..." />
+            </div>
+          </div>
+
+          <!-- Payments Table -->
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Application ID</th>
+                  <th>Customer</th>
+                  <th>Financer</th>
+                  <th>Funded Amount</th>
+                  <th>Monthly Payment</th>
+                  <th>Payment Status</th>
+                  <th>Next Due Date</th>
+                  <th style="text-align: right;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="paymentTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 6. SUPPORT PAGE -->
+        <section class="page" id="page-support">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">MANAGEMENT / HELP DESK</div>
+              <h1>Support</h1>
+              <p>Consolidated support tickets across Customer, Financer, Installer, and Merchant portals.</p>
+            </div>
+            <div class="page-actions">
+              <button class="btn btn-secondary" id="btnExportSupport">Export Tickets</button>
+            </div>
+          </div>
+
+          <!-- Support Filters -->
+          <div class="toolbar-wrap">
+            <div class="filter-tabs" id="supportStatusFilterTabs">
+              <button class="chip-btn active" data-status="All">All (<span id="supportCountAll">6</span>)</button>
+              <button class="chip-btn" data-status="Open">Open (<span id="supportCountOpen">3</span>)</button>
+              <button class="chip-btn" data-status="In Progress">In Progress (<span
+                  id="supportCountProgress">2</span>)</button>
+              <button class="chip-btn" data-status="Resolved">Resolved (<span
+                  id="supportCountResolved">1</span>)</button>
+            </div>
+
+            <div class="filter-group">
+              <input type="search" class="input-field" id="supportSearchInput" placeholder="Search tickets..." />
+              <select class="input-field" id="supportPortalSelect">
+                <option value="All">All Account Types</option>
+                <option value="Customer">Customer</option>
+                <option value="Financer">Financer</option>
+                <option value="Installer">Installer</option>
+                <option value="Merchant">Merchant</option>
+              </select>
+              <select class="input-field" id="supportPrioritySelect">
+                <option value="All">All Priorities</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Support Table -->
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Ticket ID</th>
+                  <th>Account Type</th>
+                  <th>Account / Project ID</th>
+                  <th>Concern</th>
+                  <th>Priority</th>
+                  <th>Status</th>
+                  <th>Created</th>
+                  <th style="text-align: right;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="supportTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 7. ACTIVITY LOG PAGE -->
+        <section class="page" id="page-activity">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">MANAGEMENT / AUDIT TRAIL</div>
+              <h1>Activity Logs</h1>
+              <p>Searchable system activity log for governance, accountability, and traceability.</p>
+            </div>
+            <div class="page-actions">
+              <button class="btn btn-secondary" id="btnExportActivity">Export Audit Log (JSON)</button>
+            </div>
+          </div>
+
+          <!-- Activity Toolbar -->
+          <div class="toolbar-wrap">
+            <div class="filter-group">
+              <input type="search" class="input-field" id="activitySearchInput" placeholder="Search activity..."
+                style="min-width: 280px;" />
+              <select class="input-field" id="activityRoleSelect">
+                <option value="All">All Roles</option>
+                <option value="Admin">Admin</option>
+                <option value="Customer">Customer</option>
+                <option value="Financer">Financer</option>
+                <option value="Installer">Installer</option>
+                <option value="Merchant">Merchant</option>
+              </select>
+              <select class="input-field" id="activityDateFilter" title="Filter by date range">
+                <option value="all">All Dates</option>
+                <option value="today">Today</option>
+                <option value="yesterday">Yesterday</option>
+                <option value="7days">Last 7 Days</option>
+                <option value="30days">Last 30 Days</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Full Activity Table -->
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 170px;">Time</th>
+                  <th style="width: 220px;">User / Role</th>
+                  <th>Action</th>
+                  <th style="width: 150px;">Related Record</th>
+                </tr>
+              </thead>
+              <tbody id="activityTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 8. SETTINGS PAGE -->
+        <section class="page" id="page-settings">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">SYSTEM / ADMINISTRATIVE CONTROLS</div>
+              <h1>Settings</h1>
+              <p>Platform parameters, Hello Solar Direct Installation options, and alert thresholds.</p>
+            </div>
+            <div class="page-actions" style="display:flex; align-items:center; gap:12px;">
+              <span id="settingsSaveStatus" style="font-size:12px; color:var(--muted); font-weight:500;"></span>
+              <button class="btn btn-primary" id="btnSaveSettings" disabled>Save Preferences</button>
+            </div>
+          </div>
+
+          <div class="settings-grid">
+            <!-- 1. General Settings -->
+            <div class="panel">
+              <div class="panel-head">
+                <div>
+                  <h2>General Settings</h2>
+                  <p>Platform identity, operating timezone, currency, and escalation email.</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="setCompanyName">Platform Name</label>
+                <input class="input-field" style="width:100%;" id="setCompanyName" value="Hello Solar Philippines" />
+                <div class="form-error" id="errSetCompanyName"></div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="setTimezone">Operational Timezone</label>
+                <select class="input-field" style="width:100%;" id="setTimezone">
+                  <option value="Philippine Standard Time (GMT+8)">Philippine Standard Time (GMT+8)</option>
+                  <option value="Singapore Standard Time (GMT+8)">Singapore Standard Time (GMT+8)</option>
+                  <option value="Tokyo Standard Time (GMT+9)">Tokyo Standard Time (GMT+9)</option>
+                  <option value="Western Indonesia Time (GMT+7)">Western Indonesia Time (GMT+7)</option>
+                  <option value="UTC (Coordinated Universal Time)">UTC (Coordinated Universal Time)</option>
+                </select>
+                <div class="form-error" id="errSetTimezone"></div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="setCurrency">Default Currency</label>
+                <select class="input-field" style="width:100%;" id="setCurrency">
+                  <option value="PHP (₱)">PHP (₱) - Philippine Peso</option>
+                  <option value="USD ($)">USD ($) - US Dollar</option>
+                  <option value="EUR (€)">EUR (€) - Euro</option>
+                  <option value="SGD (S$)">SGD (S$) - Singapore Dollar</option>
+                  <option value="JPY (¥)">JPY (¥) - Japanese Yen</option>
+                </select>
+                <div class="form-error" id="errSetCurrency"></div>
+              </div>
+              <div class="form-group" style="margin-bottom:0;">
+                <label class="form-label" for="setEmail">Alert / Escalation Email</label>
+                <input type="email" class="input-field" style="width:100%;" id="setEmail" value="admin@hellosolar.ph" />
+                <div class="form-error" id="errSetEmail"></div>
+              </div>
+            </div>
+
+            <!-- 2. Hello Solar Direct Installation -->
+            <div class="panel">
+              <div class="panel-head">
+                <div>
+                  <h2>Hello Solar Direct Installation</h2>
+                  <p>Capacity limits and assignment rules for internal engineering teams.</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="setDirectTeam">Designated Internal Engineering Unit</label>
+                <input class="input-field" style="width:100%;" id="setDirectTeam"
+                  value="Hello Solar Central Operations (Team Alpha)" />
+                <div class="form-error" id="errSetDirectTeam"></div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="setMaxDirect">Maximum Concurrent Direct Projects</label>
+                <input type="number" min="1" step="1" class="input-field" style="width:100%;" id="setMaxDirect"
+                  value="12" />
+                <div class="form-error" id="errSetMaxDirect"></div>
+                <div class="form-help">Prevents overbooking internal field technicians beyond configured capacity.</div>
+              </div>
+              <div class="form-group" style="margin-bottom:0;">
+                <label class="form-label"
+                  style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;"
+                  for="setDirectConfirm">
+                  <span>Require Confirmation for Direct Installation Acceptance</span>
+                  <input type="checkbox" id="setDirectConfirm" checked
+                    style="width:18px; height:18px; cursor:pointer;" />
+                </label>
+                <div class="form-help">Displays the verification modal before assigning direct installation jobs.</div>
+              </div>
+            </div>
+
+            <!-- 3. Operational Alert Thresholds -->
+            <div class="panel settings-grid-full">
+              <div class="panel-head">
+                <div>
+                  <h2>Operational Alert Thresholds</h2>
+                  <p>Dynamic triggers driving the Needs Attention list, delinquency notices, and project delay flags.
+                  </p>
+                </div>
+              </div>
+              <div class="thresholds-grid">
+                <div class="form-group">
+                  <label class="form-label" for="setOverdueDays">Mark Payment Overdue After (Days)</label>
+                  <input type="number" min="0" step="1" class="input-field" style="width:100%;" id="setOverdueDays"
+                    value="5" />
+                  <div class="form-error" id="errSetOverdueDays"></div>
+                  <div class="form-help">Missed payments exceeding this grace threshold are flagged as Overdue.</div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="setDelayDays">Mark Installation Delayed After (Days)</label>
+                  <input type="number" min="0" step="1" class="input-field" style="width:100%;" id="setDelayDays"
+                    value="1" />
+                  <div class="form-error" id="errSetDelayDays"></div>
+                  <div class="form-help">Installations past their schedule by this threshold trigger delay alerts.</div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="setDocHours">Flag Document Review After (Hours)</label>
+                  <input type="number" min="0" step="1" class="input-field" style="width:100%;" id="setDocHours"
+                    value="48" />
+                  <div class="form-error" id="errSetDocHours"></div>
+                  <div class="form-help">Incomplete KYC reviews exceeding this duration are escalated.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Separated Developer / Demo Tools (Hidden in Production) -->
+          <div class="dev-tools-wrapper" id="devToolsWrapper" style="display:none; margin-top:28px;">
+            <details class="dev-tools-accordion" id="devToolsAccordion"
+              style="border: 1px dashed var(--border); border-radius: var(--radius); padding: 14px 18px; background: rgba(0,0,0,0.015);">
+              <summary
+                style="font-size: 12px; font-weight: 600; color: var(--muted); cursor: pointer; user-select: none;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"
+                  style="display:inline-block; vertical-align:-2px; margin-right:4px;">
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                  </path>
+                </svg>Developer / Demo Tools <span
+                  style="font-size: 11px; opacity: 0.75; font-weight: 400; margin-left: 6px;">(Hidden in
+                  production)</span>
+              </summary>
+              <div
+                style="margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+                <div>
+                  <div style="font-weight: 600; font-size: 13px; color: var(--ink);">Reset Prototype Demo Data</div>
+                  <p style="font-size: 12px; color: var(--muted); margin: 2px 0 0;">
+                    Development utility to restore local sample data. Destructive confirmation is strictly required.
+                  </p>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm" id="btnResetDataModalOpen"
+                  style="border-color: var(--danger); color: var(--danger);">
+                  Reset Demo Data...
+                </button>
+              </div>
+            </details>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ==================== MODALS & DRAWERS ==================== -->
+
+  <!-- 1. HELLO SOLAR DIRECT INSTALLATION CONFIRMATION MODAL -->
+  <div class="modal-overlay" id="directInstallModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow" style="color:var(--accent);">HELLO SOLAR DIRECT INSTALL</div>
+          <h2>Confirm Direct Installation</h2>
+        </div>
+        <button class="modal-close-btn" data-close-modal="directInstallModal">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="direct-info-box">
+          <div class="box-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h4>Accept for Hello Solar Direct Installation</h4>
+            <p>This solar project will be executed directly by the <strong>Hello Solar Internal Engineering
+                Team</strong>, bypassing partner installer dispatch. The project will automatically be scheduled under
+              Hello Solar Direct operations.</p>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span>Application ID</span>
+            <strong id="dimAppId">APP-1024</strong>
+          </div>
+          <div class="detail-item">
+            <span>Customer</span>
+            <strong id="dimCustomer">Maria Elena Cruz</strong>
+          </div>
+          <div class="detail-item">
+            <span>Project Location</span>
+            <strong id="dimLocation">Cebu City</strong>
+          </div>
+          <div class="detail-item">
+            <span>System Size</span>
+            <strong id="dimSystem">6 kW</strong>
+          </div>
+          <div class="detail-item">
+            <span>Current Status</span>
+            <strong id="dimStatus">Approved</strong>
+          </div>
+          <div class="detail-item">
+            <span>Financing Institution</span>
+            <strong id="dimFinancer">SunFund Philippines</strong>
+          </div>
+        </div>
+
+        <p style="color:var(--muted); font-size:12px; margin:0;">
+          Upon confirmation, the installation type will be set to <em>Hello Solar Direct</em>, installer assigned as
+          <em>Hello Solar Internal Team</em>, and stage moved to <em>Ready for Installation</em>.
+        </p>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="directInstallModal">Cancel</button>
+        <button class="btn btn-primary" id="btnConfirmDirectInstall">
+          Accept for Hello Solar Direct Installation
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. APPLICATION DETAILS SLIDE-OVER DRAWER -->
+  <div class="drawer-overlay" id="appDrawerOverlay">
+    <div class="drawer-panel">
+      <div class="drawer-head">
+        <div>
+          <div class="eyebrow" id="drawerEyebrow">APPLICATION DETAILS</div>
+          <div style="display:flex; align-items:center; gap:10px; margin-top:2px;">
+            <h2 id="drawerAppId" style="margin:0; font-size:22px;">APP-1024</h2>
+            <span class="status-pill" id="drawerStagePill">Approved</span>
+          </div>
+          <span id="drawerCustomerName" style="color:var(--muted); font-size:12.5px;">Maria Elena Cruz</span>
+        </div>
+        <button class="modal-close-btn" id="drawerCloseBtn" aria-label="Close details">×</button>
+      </div>
+
+      <!-- Detail Navigation Tabs -->
+      <div class="drawer-tabs-bar" id="appDrawerTabs">
+        <button class="drawer-tab active" data-dtab="overview">Overview</button>
+        <button class="drawer-tab" data-dtab="documents">Documents (<span id="dtabDocsCount">5/5</span>)</button>
+        <button class="drawer-tab" data-dtab="financing">Financing</button>
+        <button class="drawer-tab" data-dtab="installation">Installation</button>
+        <button class="drawer-tab" data-dtab="activity">Activity (<span id="dtabActCount">3</span>)</button>
+      </div>
+
+      <div class="drawer-body">
+        <!-- TAB 1: OVERVIEW -->
+        <div class="drawer-tab-content active" id="tabContentOverview">
+          <!-- Visual Lifecycle Stepper -->
+          <div style="font-weight:700; font-size:12px; margin-bottom:6px;">Lifecycle Progression</div>
+          <div class="stepper" id="drawerStepper"></div>
+
+          <!-- Direct Install Callout within Drawer if eligible and unassigned -->
+          <div id="drawerDirectInstallCallout" style="display:none; margin-bottom:18px;">
+            <div class="direct-info-box">
+              <div class="box-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4>Eligible for Direct Installation</h4>
+                <p>This approved application currently has no installer assigned and can be directly installed by the
+                  Hello Solar internal team.</p>
+                <button class="btn btn-primary btn-sm" id="btnDrawerDirectAccept" style="margin-top:8px;">
+                  Accept for Hello Solar Direct Install
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important Application Information Panel -->
+          <div class="panel" style="margin-bottom:14px; padding:16px;">
+            <div style="font-weight:700; font-size:13px; margin-bottom:10px;">Application Summary</div>
+            <div class="detail-grid" style="margin:0; background:transparent; padding:0; border:none;">
+              <div class="detail-item">
+                <span>Application ID</span>
+                <strong id="drawerOverviewAppId">APP-1024</strong>
+              </div>
+              <div class="detail-item">
+                <span>Customer Name</span>
+                <strong id="drawerOverviewCustomer">Maria Elena Cruz</strong>
+              </div>
+              <div class="detail-item">
+                <span>Project Location</span>
+                <strong id="drawerLocation">Cebu City</strong>
+              </div>
+              <div class="detail-item">
+                <span>System Size</span>
+                <strong id="drawerSystem">6 kW</strong>
+              </div>
+              <div class="detail-item">
+                <span>Funded Amount</span>
+                <strong id="drawerAmount">₱315,000</strong>
+              </div>
+              <div class="detail-item">
+                <span>Current Stage</span>
+                <strong id="drawerOverviewStage">Approved</strong>
+              </div>
+              <div class="detail-item">
+                <span>Assigned Financer</span>
+                <strong id="drawerFinancer">SunFund Philippines</strong>
+              </div>
+              <div class="detail-item">
+                <span>Installer / Type</span>
+                <strong id="drawerInstallerSummary">Hello Solar Internal Team</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Specs -->
+          <div class="panel" style="margin-bottom:14px; padding:16px;">
+            <div style="font-weight:700; font-size:13px; margin-bottom:10px;">Technical Equipment</div>
+            <div class="detail-grid" style="margin:0; background:transparent; padding:0; border:none;">
+              <div class="detail-item">
+                <span>Solar Panels</span>
+                <strong id="drawerPanels">12x Canadian Solar 500W</strong>
+              </div>
+              <div class="detail-item">
+                <span>Inverter Model</span>
+                <strong id="drawerInverter">Huawei SUN2000-5KTL</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Administrative Notes -->
+          <div class="panel" style="padding:16px;">
+            <div style="font-weight:700; font-size:13px; margin-bottom:8px;">Administrative Notes</div>
+            <p id="drawerNotes" style="font-size:12.5px; color:var(--ink-secondary); margin:0; line-height:1.5;"></p>
+          </div>
+        </div>
+
+        <!-- TAB 2: DOCUMENTS -->
+        <div class="drawer-tab-content" id="tabContentDocuments">
+          <div class="doc-summary-banner">
+            <div>
+              <div class="doc-summary-title" id="docSummaryTitle">5 of 5 documents submitted</div>
+              <div class="doc-summary-sub" id="docSummarySub">Review compliance checklist for credit disbursement.</div>
+            </div>
+            <span class="status-pill success" id="docCompliancePill">Compliant</span>
+          </div>
+
+          <div id="drawerDocList"></div>
+        </div>
+
+        <!-- TAB 3: FINANCING -->
+        <div class="drawer-tab-content" id="tabContentFinancing">
+          <div class="finance-summary-grid">
+            <div class="finance-stat-card">
+              <span>Funded Project Value</span>
+              <strong id="drawerFinancingAmount">₱315,000</strong>
+            </div>
+            <div class="finance-stat-card">
+              <span>Monthly Amortization</span>
+              <strong id="drawerMonthly">₱7,200 / mo</strong>
+            </div>
+          </div>
+
+          <div class="panel" style="margin-bottom:14px; padding:16px;">
+            <div style="font-weight:700; font-size:13px; margin-bottom:10px;">Financing Partner Details</div>
+            <div class="detail-grid" style="margin:0; background:transparent; padding:0; border:none;">
+              <div class="detail-item">
+                <span>Financing Partner</span>
+                <strong id="drawerFinPartnerName">SunFund Philippines</strong>
+              </div>
+              <div class="detail-item">
+                <span>Financing Status</span>
+                <strong id="drawerFinancingDecision">Credit Approved & Term Sheet Funded</strong>
+              </div>
+              <div class="detail-item">
+                <span>Repayment Health</span>
+                <strong id="drawerFinancingRepayHealth">On Time</strong>
+              </div>
+              <div class="detail-item">
+                <span>Next Due Date</span>
+                <strong id="drawerFinancingNextDue">2026-10-15</strong>
+              </div>
+              <div class="detail-item" style="grid-column: span 2;">
+                <span>Financing Program</span>
+                <strong id="drawerFinancingPlan">60-Month Solar Loan @ 7.5% APR</strong>
+              </div>
+              <div class="detail-item" style="grid-column: span 2;">
+                <span>Financer Compliance Notes</span>
+                <strong id="drawerFinancingNotes"
+                  style="font-weight:normal; font-size:12px; color:var(--muted);">Approved financing terms
+                  verified.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: INSTALLATION -->
+        <div class="drawer-tab-content" id="tabContentInstallation">
+          <div class="panel" style="margin-bottom:14px; padding:16px;">
+            <div style="font-weight:700; font-size:13px; margin-bottom:10px;">Installation Assignment Status</div>
+            <div class="detail-grid" style="margin:0; background:transparent; padding:0; border:none;">
+              <div class="detail-item">
+                <span>Installation Model</span>
+                <strong id="drawerInstallerType">Hello Solar Direct</strong>
+              </div>
+              <div class="detail-item">
+                <span>Assigned Installer</span>
+                <strong id="drawerInstaller">Hello Solar Internal Team</strong>
+              </div>
+              <div class="detail-item">
+                <span>Installation Status</span>
+                <strong id="drawerInstStatusVal">Scheduled</strong>
+              </div>
+              <div class="detail-item">
+                <span>Target Schedule</span>
+                <strong id="drawerInstScheduleVal">Within 3 days (Priority)</strong>
+              </div>
+              <div class="detail-item">
+                <span>System Size</span>
+                <strong id="drawerInstSystemVal">6 kW</strong>
+              </div>
+              <div class="detail-item">
+                <span>Project Location</span>
+                <strong id="drawerInstLocationVal">Cebu City</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Installation Assignment / Reassignment Options -->
+          <div id="drawerInstManagementSection"></div>
+
+          <!-- Compatible hook for existing test runner -->
+          <div id="drawerReassignSection" style="display:none; margin-top:12px;">
+            <button class="btn btn-secondary btn-sm" id="btnDrawerReassignDirect">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"
+                style="display:inline-block; vertical-align:-2px; margin-right:4px;">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>Reassign to Hello Solar Direct...
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 5: ACTIVITY -->
+        <div class="drawer-tab-content" id="tabContentActivity">
+          <div class="panel" style="padding:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <div style="font-weight:700; font-size:13px;">Application Audit Trail</div>
+              <span style="font-size:11px; color:var(--muted);">Chronological event history</span>
+            </div>
+            <div class="app-timeline" id="drawerActivityTimeline"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer-foot">
+        <div id="drawerContextActions" style="display:flex; align-items:center; gap:8px;"></div>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:11px; color:var(--muted);" id="drawerUpdated">Updated 25 mins ago</span>
+          <button class="btn btn-secondary" id="drawerDoneBtn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. ASSIGN PARTNER INSTALLER MODAL -->
+  <div class="modal-overlay" id="assignPartnerModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">INSTALLATION GOVERNANCE</div>
+          <h2>Assign Partner Installer</h2>
+        </div>
+        <button class="modal-close-btn" data-close-modal="assignPartnerModal">×</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:12.5px; color:var(--muted); margin:0 0 16px;">
+          Assign an accredited regional partner installer from the Hello Solar installer network to execute this
+          project.
+        </p>
+
+        <div class="detail-grid" style="margin-bottom:16px;">
+          <div class="detail-item">
+            <span>Application ID</span>
+            <strong id="apmAppId">APP-1024</strong>
+          </div>
+          <div class="detail-item">
+            <span>Customer</span>
+            <strong id="apmCustomer">Maria Elena Cruz</strong>
+          </div>
+          <div class="detail-item">
+            <span>Location</span>
+            <strong id="apmLocation">Cebu City</strong>
+          </div>
+          <div class="detail-item">
+            <span>System Size</span>
+            <strong id="apmSystem">6 kW</strong>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Select Partner Installer</label>
+          <select class="input-field" id="apmInstallerSelect" style="width:100%;">
+            <option value="SolarTech Visayas Solutions">SolarTech Visayas Solutions (Rating 4.8 ★ • 2 Active)</option>
+            <option value="SunPower Masters Cebu">SunPower Masters Cebu (Rating 4.7 ★ • 2 Active)</option>
+            <option value="GreenVolt Solutions Corp.">GreenVolt Solutions Corp. (Rating 4.3 ★ • 1 Active)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Target Installation Schedule</label>
+          <input class="input-field" id="apmScheduleInput" style="width:100%;" value="Within 5 business days" />
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="assignPartnerModal">Cancel</button>
+        <button class="btn btn-primary" id="btnConfirmAssignPartner">
+          Confirm Partner Assignment
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. DOCUMENT PREVIEW MODAL -->
+  <div class="modal-overlay" id="docPreviewModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">DOCUMENT COMPLIANCE</div>
+          <h2 id="dpmTitle">Document Preview</h2>
+        </div>
+        <button class="modal-close-btn" data-close-modal="docPreviewModal">×</button>
+      </div>
+      <div class="modal-body">
+        <div
+          style="background:var(--bg); border:1px solid var(--line); border-radius:var(--radius-md); padding:20px; margin-bottom:16px; text-align:center;">
+          <div style="margin-bottom:8px; display:flex; justify-content:center; color:var(--muted);">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+          </div>
+          <strong id="dpmFileName" style="display:block; font-size:14px; color:var(--ink);">gov_id_cruz.pdf</strong>
+          <span id="dpmFileMeta" style="font-size:12px; color:var(--muted); display:block; margin-top:4px;">Uploaded on
+            Sep 18, 2026</span>
+        </div>
+        <div class="detail-grid" style="margin:0;">
+          <div class="detail-item">
+            <span>Verification Status</span>
+            <strong id="dpmStatus">Verified</strong>
+          </div>
+          <div class="detail-item">
+            <span>Associated Application</span>
+            <strong id="dpmAppId">APP-1024</strong>
+          </div>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="docPreviewModal">Close</button>
+        <button class="btn btn-primary btn-sm" id="btnDpmVerify">Mark as Verified</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. INSTALLATION INSPECT / UPDATE MODAL WORKSPACE -->
+  <div class="modal-overlay" id="installModal">
+    <div class="modal-card modal-lg">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow" id="imEyebrow">INSTALLATION WORKSPACE</div>
+          <h2 id="imTitle">Project JOB-301</h2>
+        </div>
+        <button class="modal-close-btn" data-close-modal="installModal">×</button>
+      </div>
+
+      <!-- 4 Tabs: Overview | Schedule | Progress | Activity -->
+      <div class="modal-tabs-bar" id="installModalTabs">
+        <button class="modal-tab active" data-imtab="overview">Overview</button>
+        <button class="modal-tab" data-imtab="schedule">Schedule</button>
+        <button class="modal-tab" data-imtab="progress">Progress</button>
+        <button class="modal-tab" data-imtab="activity">Activity (<span id="imActCount">0</span>)</button>
+      </div>
+
+      <div class="modal-body">
+        <input type="hidden" id="imJobId" />
+
+        <!-- 1. Overview Tab -->
+        <div class="modal-tab-content active" id="imTabContentOverview">
+          <div id="imMaintenanceBanner" class="panel"
+            style="display:none; background:#fffbf0; border-color:var(--warn-border); padding:10px 14px; margin-bottom:14px; border-radius:var(--radius-md); font-size:12.5px; color:#92400e;">
+            <strong>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"
+                style="display:inline-block; vertical-align:-2px; margin-right:4px;">
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                </path>
+              </svg>Maintenance &amp; Service Operation:
+            </strong> Scheduled preventive maintenance and calibration. Not a new solar installation.
+          </div>
+
+          <div id="imCompletedBanner" class="panel"
+            style="display:none; background:#f6ffed; border:1px solid #b7eb8f; padding:10px 14px; margin-bottom:14px; border-radius:var(--radius-md); font-size:12.5px; color:#135200;">
+            <strong>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round"
+                style="display:inline-block; vertical-align:-2px; margin-right:4px;">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>Installation Completed &amp; Commissioned:
+            </strong> Final technical inspection passed and utility bi-directional meter energized. This project record
+            is finalized.
+          </div>
+
+          <div id="imOverviewDelayBanner" class="panel"
+            style="display:none; background:#fff2f0; border:1px solid #ffccc7; padding:10px 14px; margin-bottom:14px; border-radius:var(--radius-md); font-size:12.5px; color:#5c1d11;">
+            <div style="font-weight:700; color:#cf1322; margin-bottom:3px; display:flex; align-items:center; gap:8px;">
+              <span style="display:inline-flex; align-items:center; gap:4px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                  <line x1="12" y1="9" x2="12" y2="13"></line>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>Delay Reason:
+              </span>
+              <span id="imOverviewDelayCategory" class="status-pill danger"
+                style="padding:2px 8px; font-size:11px;">Permit Approval</span>
+            </div>
+            <div id="imOverviewDelayText" style="line-height:1.45;"></div>
+          </div>
+
+          <div class="detail-grid" style="margin-bottom:14px;">
+            <div class="detail-item">
+              <span>Project / App ID</span>
+              <strong id="imOverviewJobId">JOB-301</strong>
+              <small id="imOverviewAppId" style="font-size:11px; color:var(--muted); font-weight:600;">APP-1062</small>
+            </div>
+            <div class="detail-item">
+              <span>Customer</span>
+              <strong id="imOverviewCustomer">Atty. Fernando Mendoza</strong>
+            </div>
+            <div class="detail-item">
+              <span>Location</span>
+              <strong id="imOverviewLocation">Quezon City</strong>
+            </div>
+            <div class="detail-item">
+              <span>System Size</span>
+              <strong id="imOverviewSystem">7 kW</strong>
+            </div>
+            <div class="detail-item">
+              <span>Installation Type</span>
+              <strong id="imOverviewType">Hello Solar Direct</strong>
+            </div>
+            <div class="detail-item">
+              <span>Assigned Installer / Team</span>
+              <strong id="imOverviewInstaller">Hello Solar Internal Team</strong>
+            </div>
+            <div class="detail-item">
+              <span>Current Status</span>
+              <div><span class="status-pill success" id="imOverviewStatusPill">In Progress</span></div>
+            </div>
+            <div class="detail-item">
+              <span>Lead Technician</span>
+              <strong id="imOverviewLeadTech">Engr. Limuel Brasona</strong>
+            </div>
+            <div class="detail-item" id="imOverviewCompletionRow" style="display:none;">
+              <span>Completion Date</span>
+              <strong id="imOverviewCompletionDate" style="color:var(--success);">Sep 14, 2026</strong>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin:0;">
+            <label class="form-label">Project Summary &amp; Site Notes</label>
+            <div id="imOverviewNotes"
+              style="font-size:12.5px; color:var(--ink-secondary); line-height:1.5; background:var(--bg); border:1px solid var(--line); border-radius:var(--radius-md); padding:12px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Schedule Tab -->
+        <div class="modal-tab-content" id="imTabContentSchedule">
+          <div class="panel"
+            style="background:#fdfcfb; padding:16px; border:1px solid var(--line); border-radius:var(--radius-md); margin-bottom:16px;">
+            <span
+              style="font-size:11px; color:var(--muted); text-transform:uppercase; font-weight:700; letter-spacing:0.5px;">Confirmed
+              Schedule</span>
+            <div style="font-size:15px; font-weight:800; color:var(--ink); margin-top:4px;" id="imCurrentScheduleText">
+              Tomorrow, 8:30 AM</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Reschedule Installation Date &amp; Time</label>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:10px;">
+              <div>
+                <label style="font-size:11px; color:var(--muted); display:block; margin-bottom:4px;">New Target
+                  Date</label>
+                <input class="input-field" type="date" id="imRescheduleDate" style="width:100%;" />
+              </div>
+              <div>
+                <label style="font-size:11px; color:var(--muted); display:block; margin-bottom:4px;">New Time
+                  Slot</label>
+                <select class="input-field" id="imRescheduleTime" style="width:100%;">
+                  <option value="08:30 AM">08:30 AM (Morning Shift)</option>
+                  <option value="09:00 AM" selected>09:00 AM</option>
+                  <option value="10:30 AM">10:30 AM</option>
+                  <option value="01:30 PM">01:30 PM (Afternoon Shift)</option>
+                  <option value="02:00 PM">02:00 PM</option>
+                  <option value="03:30 PM">03:30 PM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Schedule Notes / Reschedule Reason</label>
+            <input class="input-field" id="imScheduleInput" style="width:100%;"
+              placeholder="e.g. Rescheduled upon customer request / Weather window adjustment" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Assigned Team Lead (Field Operations)</label>
+            <select class="input-field" id="imLeadTechSelect" style="width:100%;">
+              <option value="Unassigned">Lead: Unassigned</option>
+              <option value="Engr. Limuel Brasona">Engr. Limuel Brasona (Hello Solar Internal Lead)</option>
+              <option value="Engr. Mark Dizon">Engr. Mark Dizon (Hello Solar Internal Lead)</option>
+              <option value="Dante Alcantara">Dante Alcantara (SolarTech Lead Tech)</option>
+              <option value="Gilbert Soriano">Gilbert Soriano (GreenVolt Lead Tech)</option>
+              <option value="Ramon Quisumbing">Ramon Quisumbing (SunPower Masters Lead Tech)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 3. Progress Tab -->
+        <div class="modal-tab-content" id="imTabContentProgress">
+          <!-- Stepper: Ready → Scheduled → In Progress → Testing/Commissioning → Completed -->
+          <div class="stepper" id="imProgressStepper" style="margin: 10px 0 20px;">
+            <div class="step-item" data-step="Ready">
+              <div class="step-bubble">1</div>
+              <div class="step-label">Ready</div>
+            </div>
+            <div class="step-item" data-step="Scheduled">
+              <div class="step-bubble">2</div>
+              <div class="step-label">Scheduled</div>
+            </div>
+            <div class="step-item" data-step="In Progress">
+              <div class="step-bubble">3</div>
+              <div class="step-label">In Progress</div>
+            </div>
+            <div class="step-item" data-step="Testing">
+              <div class="step-bubble">4</div>
+              <div class="step-label">Testing / Comm.</div>
+            </div>
+            <div class="step-item" data-step="Completed">
+              <div class="step-bubble">5</div>
+              <div class="step-label">Completed</div>
+            </div>
+          </div>
+
+          <!-- Delayed Alert Banner (Shown when delayed) -->
+          <div id="imDelayedAlert"
+            style="display:none; background:#fff2f0; border:1px solid #ffccc7; border-radius:var(--radius-md); padding:12px 14px; margin-bottom:16px;">
+            <div
+              style="font-weight:800; font-size:12.5px; color:#cf1322; margin-bottom:4px; display:flex; align-items:center; gap:8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg> Project Flagged as Delayed &bull; <span id="imDelayedCategoryBadge" class="status-pill danger"
+                style="padding:2px 8px; font-size:11px;">Permit Approval</span>
+            </div>
+            <div id="imDelayedReasonText" style="font-size:12px; color:#5c1d11; line-height:1.45;"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Project Status Progression</label>
+            <select class="input-field" id="imStatusSelect" style="width:100%;">
+              <option value="Ready">Ready</option>
+              <option value="Scheduled">Scheduled</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Testing">Testing / Commissioning</option>
+              <option value="Completed">Completed</option>
+              <option value="Delayed">Delayed</option>
+            </select>
+          </div>
+
+          <!-- Required Delay Reason for Delayed Projects -->
+          <div class="form-group" id="imDelayGroup"
+            style="display:none; background:#fff9f8; border:1px solid #ffccc7; border-radius:var(--radius-md); padding:12px 14px; margin-bottom:14px;">
+            <label class="form-label" style="color:#cf1322; font-weight:700;">Delay Reason (Required for Delayed
+              status)</label>
+            <select class="input-field" id="imDelayReasonSelect" style="width:100%; margin-bottom:8px;">
+              <option value="">Select Delay Reason...</option>
+              <option value="Permit Approval">Permit Approval</option>
+              <option value="Weather">Weather</option>
+              <option value="Equipment Availability">Equipment Availability</option>
+              <option value="Customer Reschedule">Customer Reschedule</option>
+              <option value="Other">Other</option>
+            </select>
+            <input class="input-field" id="imDelayInput" style="width:100%;"
+              placeholder="Specify additional details or context for the delay..." />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Field Progress / Site Notes</label>
+            <textarea class="input-field" id="imNotesInput" style="width:100%; min-height:80px; resize:vertical;"
+              placeholder="Enter operational notes, field progress, or equipment checklist updates..."></textarea>
+          </div>
+        </div>
+
+        <!-- 4. Activity Tab -->
+        <div class="modal-tab-content" id="imTabContentActivity">
+          <div class="drawer-timeline" id="imActivityTimeline" style="padding-top:6px;">
+            <!-- Rendered by JS: only selected project's installation history and status changes -->
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="installModal">Close</button>
+        <button class="btn btn-primary" id="btnSaveInstallModal">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. SCHEDULE READY PROJECT MODAL -->
+  <div class="modal-overlay" id="newInstallModal">
+    <div class="modal-card modal-lg">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">OPERATIONS / DISPATCH</div>
+          <h2>Schedule Ready Project</h2>
+        </div>
+        <button class="modal-close-btn" data-close-modal="newInstallModal">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Select Ready Project (Status: Ready &bull; Schedule: Pending)</label>
+          <select class="input-field" id="newInstallAppSelect" style="width:100%;"></select>
+          <p id="newInstallEmptyMsg" style="display:none; font-size:12px; color:var(--muted); margin:6px 0 0;">
+            No projects with Status = Ready and Schedule = Pending Schedule are currently available.
+          </p>
+        </div>
+
+        <!-- Project Details (Read-only summary of the existing project) -->
+        <div class="detail-grid" id="newInstallDetailsGrid" style="margin-bottom:16px;">
+          <div class="detail-item">
+            <span>Project / App ID</span>
+            <strong id="schedAppId">—</strong>
+          </div>
+          <div class="detail-item">
+            <span>Customer</span>
+            <strong id="schedCustomer">—</strong>
+          </div>
+          <div class="detail-item">
+            <span>Location</span>
+            <strong id="schedLocation">—</strong>
+          </div>
+          <div class="detail-item">
+            <span>System Size</span>
+            <strong id="schedSystem">—</strong>
+          </div>
+          <div class="detail-item">
+            <span>Installation Type</span>
+            <strong id="schedType">—</strong>
+          </div>
+          <div class="detail-item">
+            <span>Assigned Installer</span>
+            <strong id="schedInstaller">—</strong>
+          </div>
+          <div class="detail-item">
+            <span>Current Lead</span>
+            <strong id="schedLead">Lead: Unassigned</strong>
+          </div>
+        </div>
+
+        <!-- Scheduling Date, Time & Team Lead -->
+        <div class="form-group">
+          <label class="form-label">Installation Appointment &amp; Team Assignment</label>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:12px;">
+            <div>
+              <label style="font-size:11px; color:var(--muted); display:block; margin-bottom:4px;">Installation
+                Date</label>
+              <input class="input-field" id="newInstallDateInput" type="date" style="width:100%;" required />
+            </div>
+            <div>
+              <label style="font-size:11px; color:var(--muted); display:block; margin-bottom:4px;">Installation
+                Time</label>
+              <select class="input-field" id="newInstallTimeSelect" style="width:100%;">
+                <option value="08:30 AM">08:30 AM (Morning Shift)</option>
+                <option value="09:00 AM" selected>09:00 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="01:30 PM">01:30 PM (Afternoon Shift)</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="03:30 PM">03:30 PM</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label style="font-size:11px; color:var(--muted); display:block; margin-bottom:4px;">Assign Team Lead (Field
+              Operations)</label>
+            <select class="input-field" id="newInstallLeadSelect" style="width:100%;">
+              <option value="Engr. Limuel Brasona">Engr. Limuel Brasona (Hello Solar Internal Lead)</option>
+              <option value="Engr. Mark Dizon">Engr. Mark Dizon (Hello Solar Internal Lead)</option>
+              <option value="Dante Alcantara">Dante Alcantara (SolarTech Visayas Lead)</option>
+              <option value="Gilbert Soriano">Gilbert Soriano (GreenVolt Solutions Lead)</option>
+              <option value="Ramon Quisumbing">Ramon Quisumbing (SunPower Masters Lead)</option>
+              <option value="Unassigned">Unassigned (Assign Later)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Compatibility inputs for any legacy references -->
+        <input type="hidden" id="newInstallTypeSelect" value="Hello Solar Direct" />
+        <input type="hidden" id="newInstallTeamInput" value="Hello Solar Internal Team" />
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="newInstallModal">Cancel</button>
+        <button class="btn btn-primary" id="btnSaveNewInstall">Confirm Schedule</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. PAYMENT DETAIL & REPAYMENT WORKSPACE MODAL -->
+  <div class="modal-overlay" id="paymentModal">
+    <div class="modal-card modal-lg">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow" id="pmEyebrow">FINANCIAL MONITORING & REPAYMENT</div>
+          <div style="display:flex; align-items:center; gap:10px; margin-top:2px;">
+            <h2 id="pmTitle" style="margin:0;">Payment Details</h2>
+            <span id="pmStatusBadge" class="status-pill success">On Time</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" data-close-modal="paymentModal">×</button>
+      </div>
+
+      <div class="modal-tabs-bar" id="pmModalTabs">
+        <button class="modal-tab active" data-pmtab="summary">Summary</button>
+        <button class="modal-tab" data-pmtab="schedule">Schedule (<span id="pmScheduleCount">0</span>)</button>
+        <button class="modal-tab" data-pmtab="history">History (<span id="pmHistoryCount">0</span>)</button>
+        <button class="modal-tab" data-pmtab="activity">Activity (<span id="pmActivityCount">0</span>)</button>
+      </div>
+
+      <div class="modal-body">
+        <input type="hidden" id="pmAppId" />
+
+        <!-- 1. Summary Tab -->
+        <div class="modal-tab-content active" id="pmTabContentSummary">
+          <div id="pmStatusAlert" class="panel"
+            style="display:none; padding:12px 14px; margin-bottom:14px; border-radius:var(--radius-md); font-size:12.5px;">
+          </div>
+
+          <div class="detail-grid" id="pmSummaryGrid" style="margin-bottom:16px;">
+            <div class="detail-item">
+              <span>Application ID</span>
+              <strong id="pmAppIdText">APP-1024</strong>
+            </div>
+            <div class="detail-item">
+              <span>Customer</span>
+              <strong id="pmCustomer">Maria Elena Cruz</strong>
+            </div>
+            <div class="detail-item">
+              <span>Financer</span>
+              <strong id="pmFinancer">SunFund Philippines</strong>
+            </div>
+            <div class="detail-item">
+              <span>Funded Amount</span>
+              <strong id="pmAmount">₱315,000</strong>
+            </div>
+            <div class="detail-item">
+              <span>Monthly Payment</span>
+              <strong id="pmMonthly">₱7,200 / mo</strong>
+            </div>
+            <div class="detail-item">
+              <span>Current Payment Status</span>
+              <div id="pmStatusContainer"><span id="pmStatus" class="status-pill success">On Time</span></div>
+            </div>
+            <div class="detail-item">
+              <span>Next / Missed Due Date</span>
+              <strong id="pmNextDue" style="color:var(--ink);">October 15, 2026</strong>
+            </div>
+            <div class="detail-item">
+              <span>Remaining Balance</span>
+              <strong id="pmRemainingBalance" style="color:var(--brand);">₱286,200</strong>
+            </div>
+            <div class="detail-item">
+              <span>Total Paid to Date</span>
+              <strong id="pmTotalPaid" style="color:var(--success);">₱28,800</strong>
+            </div>
+            <div class="detail-item">
+              <span>Repayment Progress</span>
+              <strong id="pmProgressText">4 installments completed</strong>
+            </div>
+          </div>
+
+          <!-- Administrative Payment Action Panel -->
+          <div class="panel"
+            style="background:#fafafa; border:1px solid var(--line); border-radius:var(--radius-md); padding:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+              <div>
+                <div style="font-weight:700; font-size:12.5px; color:var(--ink);">Super Admin Financial Action</div>
+                <div style="font-size:11.5px; color:var(--muted); margin-top:2px;">
+                  Manually record received installment or payment settlement. Requires confirmation and logs to audit
+                  trail.
+                </div>
+              </div>
+              <div style="display:flex; gap:8px;">
+                <button class="btn btn-outline-secondary btn-sm" id="btnOpenAdjustPaymentModal">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline-block; vertical-align:-2px; margin-right:4px;">
+                    <path d="M12 20h9"></path>
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                  </svg>Record Adjustment Note
+                </button>
+                <button class="btn btn-primary btn-sm" id="btnOpenRecordPaymentModal">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline-block; vertical-align:-2px; margin-right:4px;">
+                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                  </svg>Record Payment
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Schedule Tab -->
+        <div class="modal-tab-content" id="pmTabContentSchedule">
+          <div style="margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;">
+            <div style="font-size:12px; color:var(--muted);">Amortization schedule calculated from financing agreement:
+            </div>
+            <span id="pmScheduleSummaryBadge" class="status-pill neutral">Schedule</span>
+          </div>
+          <div class="table-container" style="max-height: 380px; overflow-y: auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Installment Due Date</th>
+                  <th>Amount Due</th>
+                  <th>Status</th>
+                  <th>Payment Date</th>
+                  <th>Reference</th>
+                </tr>
+              </thead>
+              <tbody id="pmScheduleTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 3. History Tab -->
+        <div class="modal-tab-content" id="pmTabContentHistory">
+          <div style="margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;">
+            <div style="font-size:12px; color:var(--muted);">Chronological ledger of verified payments received and
+              cleared:</div>
+            <button class="btn btn-secondary btn-sm" id="btnHistoryAddPayment"><span>+</span> Record Payment</button>
+          </div>
+          <div class="table-container" style="max-height: 380px; overflow-y: auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Receipt / Ref #</th>
+                  <th>Payment Date</th>
+                  <th>Amount Paid</th>
+                  <th>Channel / Method</th>
+                  <th>Status</th>
+                  <th>Recorded By</th>
+                </tr>
+              </thead>
+              <tbody id="pmHistoryTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 4. Activity Tab -->
+        <div class="modal-tab-content" id="pmTabContentActivity">
+          <div style="margin-bottom:12px; font-size:12px; color:var(--muted);">
+            Payment-related status changes, administrative actions, and financer updates:
+          </div>
+          <div class="drawer-timeline" id="pmActivityTimeline"
+            style="padding-top:6px; max-height: 380px; overflow-y: auto;"></div>
+        </div>
+      </div>
+
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="paymentModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5B. RECORD PAYMENT CONFIRMATION MODAL -->
+  <div class="modal-overlay" id="recordPaymentConfirmModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">FINANCIAL AUDIT ACTION</div>
+          <h2 id="rpcTitle">Record Installment Payment</h2>
+        </div>
+        <button class="modal-close-btn" data-close-modal="recordPaymentConfirmModal">×</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="rpcAppId" />
+
+        <div class="panel"
+          style="background:#fafafa; border:1px solid var(--line); border-radius:var(--radius-md); padding:12px 14px; margin-bottom:14px; font-size:12.5px;">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px;">
+            <div><span style="color:var(--muted);">Application:</span> <strong id="rpcAppText">APP-1056</strong></div>
+            <div><span style="color:var(--muted);">Customer:</span> <strong id="rpcCustomerText">Pacific Horizon
+                Logistics</strong></div>
+            <div><span style="color:var(--muted);">Financer:</span> <strong id="rpcFinancerText">BDO Green Energy
+                Financing</strong></div>
+            <div><span style="color:var(--muted);">Installment:</span> <strong id="rpcInstallmentText">#4 (Due Sep 12,
+                2026)</strong></div>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom:12px;">
+          <label style="display:block; font-size:12px; font-weight:700; margin-bottom:4px; color:var(--ink);">Amount
+            Received (PHP)</label>
+          <input type="number" class="input-field" id="rpcAmountInput" placeholder="21000" style="width:100%;" />
+        </div>
+
+        <div class="form-group" style="margin-bottom:12px;">
+          <label style="display:block; font-size:12px; font-weight:700; margin-bottom:4px; color:var(--ink);">Payment
+            Date</label>
+          <input type="date" class="input-field" id="rpcDateInput" value="2026-09-24" style="width:100%;" />
+        </div>
+
+        <div class="form-group" style="margin-bottom:12px;">
+          <label style="display:block; font-size:12px; font-weight:700; margin-bottom:4px; color:var(--ink);">Payment
+            Reference / Receipt #</label>
+          <input type="text" class="input-field" id="rpcRefInput" placeholder="e.g. BDO-REF-902148"
+            style="width:100%;" />
+        </div>
+
+        <div class="form-group" style="margin-bottom:12px;">
+          <label style="display:block; font-size:12px; font-weight:700; margin-bottom:4px; color:var(--ink);">Payment
+            Channel / Method</label>
+          <select class="input-field" id="rpcMethodSelect" style="width:100%;">
+            <option value="Bank Transfer">Bank Transfer / Direct Deposit</option>
+            <option value="Online Banking">Online Bills Payment (BDO/BPI/UnionBank)</option>
+            <option value="Auto-Debit">Virtual Account Auto-Debit</option>
+            <option value="Over-the-Counter">Over-the-Counter Branch Payment</option>
+            <option value="GCash / Maya">E-Wallet (GCash / Maya)</option>
+            <option value="Administrative Settlement">Administrative Settlement / Adjustment</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="margin-bottom:14px;">
+          <label
+            style="display:block; font-size:12px; font-weight:700; margin-bottom:4px; color:var(--ink);">Administrative
+            Notes</label>
+          <input type="text" class="input-field" id="rpcNotesInput"
+            placeholder="e.g. Confirmed via Financer daily reconciliation batch" style="width:100%;" />
+        </div>
+
+        <div
+          style="font-size:11.5px; color:var(--muted); line-height:1.4; background:var(--bg); padding:10px 12px; border-radius:var(--radius-sm); border:1px solid var(--line);">
+          ℹ <strong>Audit Confirmation:</strong> Recording this payment will update remaining loan debt, recalculate
+          repayment health, advance the due schedule, and permanently log an audit trail entry. Payment history will not
+          be overwritten.
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="recordPaymentConfirmModal">Cancel</button>
+        <button class="btn btn-primary" id="btnConfirmRecordPayment">
+          Confirm & Record Payment
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5C. PAYMENT ADJUSTMENT NOTE MODAL -->
+  <div class="modal-overlay" id="paymentAdjustModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">AUDIT LOG ADJUSTMENT</div>
+          <h2 id="pajTitle">Record Financial Note / Adjustment</h2>
+        </div>
+        <button class="modal-close-btn" data-close-modal="paymentAdjustModal">×</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="pajAppId" />
+        <div class="form-group" style="margin-bottom:12px;">
+          <label style="display:block; font-size:12px; font-weight:700; margin-bottom:4px; color:var(--ink);">Adjustment
+            Type</label>
+          <select class="input-field" id="pajTypeSelect" style="width:100%;">
+            <option value="Due Date Extension">Due Date Extension Request</option>
+            <option value="Grace Period Extension">Grace Period Notice (Financer Approved)</option>
+            <option value="Payment Correction">Payment Correction / Reconciliation Note</option>
+            <option value="Fee Waiver">Late Fee Waiver / Exception</option>
+            <option value="Customer Follow-up">Customer Follow-up Log</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:14px;">
+          <label style="display:block; font-size:12px; font-weight:700; margin-bottom:4px; color:var(--ink);">Official
+            Note & Details</label>
+          <textarea class="input-field" id="pajNotesInput" rows="3"
+            placeholder="Provide complete context for the adjustment or administrative update..."
+            style="width:100%;"></textarea>
+        </div>
+        <div style="font-size:11.5px; color:var(--muted); line-height:1.4;">
+          This note will be permanently added to the payment ledger and recorded in the Super Admin audit log without
+          altering historical receipts.
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="paymentAdjustModal">Cancel</button>
+        <button class="btn btn-primary" id="btnConfirmPaymentAdjust">
+          Record Note to Audit Log
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. SUPPORT TICKET MANAGE MODAL -->
+  <div class="modal-overlay" id="supportModal">
+    <div class="modal-card modal-lg">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">SUPPORT TICKET WORKSPACE</div>
+          <div style="display:flex; align-items:center; gap:10px; margin-top:2px;">
+            <h2 id="smTitle" style="margin:0;">Ticket SUP-044</h2>
+            <span id="smStatusBadge" class="status-pill warn">In Progress</span>
+            <span id="smPriorityBadge" class="status-pill danger">High</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" data-close-modal="supportModal">×</button>
+      </div>
+
+      <div class="modal-tabs-bar" id="supportModalTabs">
+        <button class="modal-tab active" data-sptab="overview">Overview</button>
+        <button class="modal-tab" data-sptab="conversation">Conversation (<span id="smMsgCount">0</span>)</button>
+        <button class="modal-tab" data-sptab="activity">Activity (<span id="smActCount">0</span>)</button>
+      </div>
+
+      <div class="modal-body">
+        <input type="hidden" id="smTicketId" />
+
+        <!-- Tab 1: Overview -->
+        <div class="modal-tab-content active" id="spTabContentOverview">
+          <div class="detail-grid">
+            <div class="detail-item">
+              <span>Ticket ID</span>
+              <strong id="smDetailTicketId">SUP-044</strong>
+            </div>
+            <div class="detail-item">
+              <span>Account Type</span>
+              <strong id="smAccountType">Installer</strong>
+            </div>
+            <div class="detail-item">
+              <span>Account / Requester</span>
+              <strong id="smAccountName">GreenVolt Solutions Corp.</strong>
+            </div>
+            <div class="detail-item">
+              <span>Related Project / Account</span>
+              <div id="smRelatedContainer">
+                <button class="record-link-btn" id="smRelatedBtn" data-open-record="">-</button>
+              </div>
+            </div>
+            <div class="detail-item" style="grid-column: span 2;">
+              <span>Reported Concern</span>
+              <div id="smConcern"
+                style="background:#fdfbf8; border:1px solid var(--line); border-radius:var(--radius-md); padding:10px 12px; font-size:13px; font-weight:600; color:var(--ink); margin-top:4px;">
+              </div>
+            </div>
+            <div class="detail-item">
+              <span>Priority Level</span>
+              <select class="input-field" id="smPrioritySelect" style="width:100%; margin-top:4px;">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+            <div class="detail-item">
+              <span>Current Status</span>
+              <div style="margin-top:4px;"><span id="smCurrentStatusPill" class="status-pill warn">In Progress</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span>Created Date / Time</span>
+              <strong id="smCreatedTime">3 hours ago</strong>
+            </div>
+            <div class="detail-item">
+              <span>Assigned Admin</span>
+              <select class="input-field" id="smAssignedAdminSelect" style="width:100%; margin-top:4px;">
+                <option value="ADMIN (Limuel)">ADMIN (Limuel)</option>
+                <option value="ADMIN (Operations Desk)">ADMIN (Operations Desk)</option>
+                <option value="Unassigned">Unassigned</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Workflow Section -->
+          <div id="smWorkflowBox" style="margin-top:16px; padding-top:16px; border-top:1px solid var(--line);">
+            <!-- Open/In Progress Controls -->
+            <div id="smActiveControls">
+              <div class="form-group" style="margin-bottom:12px;">
+                <label class="form-label">Support Stage & Workflow Status</label>
+                <select class="input-field" id="smStatusSelect" style="width:100%;">
+                  <option value="Open">Open (Pending Triage)</option>
+                  <option value="In Progress">In Progress (Active Investigation / Resolution)</option>
+                  <option value="Resolved">Resolved (Issue Addressed & Closed)</option>
+                </select>
+              </div>
+
+              <!-- Required Resolution Note when resolving -->
+              <div class="form-group" id="smResolutionGroup" style="display:none; margin-bottom:12px;">
+                <label class="form-label" style="color:var(--accent); font-weight:700;">Resolution Note <span
+                    style="color:var(--danger)">* Required for Resolution</span></label>
+                <textarea class="input-field" id="smResolutionInput"
+                  placeholder="Specify how this concern was resolved and confirmed with requester..."
+                  style="width:100%; min-height:75px; resize:vertical;"></textarea>
+                <div id="smResolutionError"
+                  style="display:none; color:var(--danger); font-size:12px; margin-top:4px; font-weight:600;">A
+                  resolution note is required to resolve this ticket.</div>
+              </div>
+
+              <div class="form-group" id="smGeneralNoteGroup" style="margin-bottom:0;">
+                <label class="form-label">Update Remarks / Administrative Note</label>
+                <textarea class="input-field" id="smNotesInput" placeholder="Add internal progress note..."
+                  style="width:100%; min-height:60px; resize:vertical;"></textarea>
+              </div>
+            </div>
+
+            <!-- Resolved Controls & Summary -->
+            <div id="smResolvedControls" style="display:none;">
+              <div class="panel"
+                style="background:#f4f9f4; border:1px solid #c2e2c2; border-radius:var(--radius-md); padding:14px; margin-bottom:12px;">
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+                  <span
+                    style="color:var(--success); font-weight:700; font-size:14px; display:inline-flex; align-items:center;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                  <strong style="color:#1b5e20; font-size:13px;">Ticket Resolved</strong>
+                  <span style="font-size:11.5px; color:var(--muted); margin-left:auto;">By <span id="smResolvedBy">ADMIN
+                      (Limuel)</span> on <span id="smResolvedAt">-</span></span>
+                </div>
+                <div style="font-size:12.5px; color:var(--ink); line-height:1.45;">
+                  <strong>Resolution:</strong> <span id="smResolvedNote">-</span>
+                </div>
+              </div>
+
+              <div id="smReopenTriggerBox">
+                <button type="button" class="btn btn-secondary btn-sm" id="btnShowReopenForm">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline-block; vertical-align:-2px; margin-right:4px;">
+                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                    <path d="M3 3v5h5"></path>
+                  </svg>Reopen Ticket
+                </button>
+              </div>
+
+              <div id="smReopenBox"
+                style="display:none; background:#fdfbf8; border:1px solid var(--line); border-radius:var(--radius-md); padding:14px; margin-top:10px;">
+                <label class="form-label" style="font-weight:700;">Reopening Reason</label>
+                <input type="text" class="input-field" id="smReopenReasonInput"
+                  placeholder="Reason for reopening this ticket (e.g. customer follow-up, recurring issue)..."
+                  style="width:100%; margin-bottom:10px;" />
+                <div style="display:flex; gap:8px;">
+                  <button type="button" class="btn btn-primary btn-sm" id="btnConfirmReopen">Confirm Reopen</button>
+                  <button type="button" class="btn btn-secondary btn-sm" id="btnCancelReopen">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Conversation -->
+        <div class="modal-tab-content" id="spTabContentConversation">
+          <div id="smMessagesList"
+            style="display:flex; flex-direction:column; gap:10px; max-height:360px; overflow-y:auto; padding:4px 0 14px 0;">
+          </div>
+
+          <div class="panel"
+            style="background:#fdfbf8; border:1px solid var(--line); border-radius:var(--radius-md); padding:14px; margin-top:10px;">
+            <label class="form-label" style="font-weight:700; display:flex; justify-content:space-between;">
+              <span>Reply to Requester (<span id="smReplyRecipient">-</span>)</span>
+              <span style="font-size:11px; font-weight:400; color:var(--muted);">Responses logged to ticket
+                history</span>
+            </label>
+            <textarea class="input-field" id="smReplyInput" placeholder="Type your response to the requester here..."
+              style="width:100%; min-height:75px; resize:vertical; margin-bottom:10px;"></textarea>
+            <div style="display:flex; justify-content:flex-end;">
+              <button type="button" class="btn btn-primary btn-sm" id="btnSendTicketReply">Send Reply</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Activity -->
+        <div class="modal-tab-content" id="spTabContentActivity">
+          <div class="timeline" id="smActivityTimeline" style="padding:10px 0; max-height:460px; overflow-y:auto;">
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="supportModal">Close</button>
+        <button class="btn btn-primary" id="btnSaveSupportTicket">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. ACCOUNT PROFILE MODAL (Role-specific detail workspace) -->
+  <div class="modal-overlay" id="accountModal">
+    <div class="modal-card modal-lg">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow" id="acmType">CUSTOMER PROFILE</div>
+          <div style="display:flex; align-items:center; gap:10px; margin-top:2px;">
+            <h2 id="acmName" style="margin:0;">Maria Elena Cruz</h2>
+            <span id="acmStatusBadge" class="status-pill success">Active</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" data-close-modal="accountModal">×</button>
+      </div>
+
+      <div class="modal-tabs-bar" id="accountModalTabs">
+        <button class="modal-tab active" data-acmtab="overview">Overview</button>
+        <button class="modal-tab" data-acmtab="records">Related Records (<span id="acmRecordCount">0</span>)</button>
+        <button class="modal-tab" data-acmtab="activity">Activity (<span id="acmActCount">0</span>)</button>
+      </div>
+
+      <div class="modal-body">
+        <input type="hidden" id="acmId" />
+        <input type="hidden" id="acmRawType" />
+
+        <!-- 1. Overview Tab -->
+        <div class="modal-tab-content active" id="acmTabContentOverview">
+          <div id="acmStatusAlert" class="panel"
+            style="display:none; padding:10px 14px; margin-bottom:14px; border-radius:var(--radius-md); font-size:12.5px;">
+          </div>
+
+          <div class="detail-grid" id="acmOverviewGrid" style="margin-bottom:16px;"></div>
+
+          <!-- Administrative Control Panel -->
+          <div class="panel"
+            style="background:#fafafa; border:1px solid var(--line); border-radius:var(--radius-md); padding:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+              <div>
+                <div style="font-weight:700; font-size:12.5px; color:var(--ink);">Administrative Account Control</div>
+                <div style="font-size:11.5px; color:var(--muted); margin-top:2px;">
+                  Standardized status lifecycle management. All changes require confirmation and are logged to audit
+                  trail.
+                </div>
+              </div>
+              <div id="acmAdminActions" style="display:flex; gap:8px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Related Records Tab -->
+        <div class="modal-tab-content" id="acmTabContentRecords">
+          <div id="acmRelatedRecordsContainer" style="padding-top:4px;"></div>
+        </div>
+
+        <!-- 3. Activity Tab -->
+        <div class="modal-tab-content" id="acmTabContentActivity">
+          <div class="drawer-timeline" id="acmActivityTimeline" style="padding-top:6px;"></div>
+        </div>
+      </div>
+
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="accountModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7B. ADMINISTRATIVE ACTION CONFIRMATION MODAL -->
+  <div class="modal-overlay" id="accountActionConfirmModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow" id="acmConfirmEyebrow">ADMINISTRATIVE ACTION</div>
+          <h2 id="acmConfirmTitle">Suspend Account?</h2>
+        </div>
+        <button class="modal-close-btn" data-close-modal="accountActionConfirmModal">×</button>
+      </div>
+      <div class="modal-body">
+        <p id="acmConfirmMessage"
+          style="margin:0 0 14px 0; font-size:13px; line-height:1.5; color:var(--ink-secondary);"></p>
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">Administrative Reason / Audit Note</label>
+          <input class="input-field" id="acmActionReasonInput" style="width:100%;"
+            placeholder="e.g. Compliance review hold / KYC verification / Requested by stakeholder" />
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="accountActionConfirmModal">Cancel</button>
+        <button class="btn btn-primary" id="btnConfirmAccountAction">Confirm Action</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7C. EXPORT DIRECTORY MODAL -->
+  <div class="modal-overlay" id="exportAccountsModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">DIRECTORY EXPORT</div>
+          <h2>Export Accounts Directory</h2>
+        </div>
+        <button class="modal-close-btn" data-close-modal="exportAccountsModal">×</button>
+      </div>
+      <div class="modal-body">
+        <p style="margin:0 0 16px 0; font-size:13px; color:var(--ink-secondary); line-height:1.5;">
+          Export verified stakeholder directory records to a structured CSV file. Sensitive passwords, tokens, and
+          encrypted credentials are excluded.
+        </p>
+
+        <div
+          style="background:var(--bg); border:1px solid var(--line); border-radius:var(--radius-md); padding:14px; margin-bottom:16px;">
+          <div style="font-weight:700; font-size:12px; margin-bottom:10px; color:var(--ink);">Select Export Scope:</div>
+          <label
+            style="display:flex; align-items:center; gap:10px; margin-bottom:10px; cursor:pointer; font-size:13px;">
+            <input type="radio" name="exportScope" value="current" checked />
+            <span>Current Directory: <strong id="exportScopeCurrentLabel">Customers</strong> (<span
+                id="exportScopeCurrentCount">9</span> records)</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:10px; cursor:pointer; font-size:13px;">
+            <input type="radio" name="exportScope" value="all" />
+            <span>All Stakeholder Directories (<span id="exportScopeAllCount">22</span> total accounts)</span>
+          </label>
+        </div>
+
+        <div style="font-size:12px; color:var(--muted); line-height:1.45;">
+          Format: <strong>CSV (Comma-Separated Values)</strong> compatible with Microsoft Excel, Google Sheets, and CRM
+          tools.
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="exportAccountsModal">Cancel</button>
+        <button class="btn btn-primary" id="btnExecuteExportAccounts">Download CSV</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. RESET DEMO DATA CONFIRMATION MODAL -->
+  <div class="modal-overlay" id="resetModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow" style="color:var(--danger)">DESTRUCTIVE ACTION · DEVELOPER TOOL</div>
+          <h2>Reset Demo Data?</h2>
+        </div>
+        <button class="modal-close-btn" data-close-modal="resetModal">×</button>
+      </div>
+      <div class="modal-body">
+        <p style="margin:0 0 12px; font-size:13px; line-height:1.5; color:var(--ink);">
+          This will erase local changes and restore all sample applications, customers, financers, installers, payments,
+          tickets, and activity logs to their initial demo state.
+        </p>
+        <div
+          style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.25); border-radius: var(--radius); padding: 12px 14px; margin-bottom: 14px;">
+          <div
+            style="font-size: 12px; font-weight: 700; color: var(--danger); margin-bottom: 4px; display:flex; align-items:center; gap:6px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            Destructive Action Confirmation
+          </div>
+          <div style="font-size: 12px; color: var(--ink-secondary); line-height: 1.4;">
+            To prevent accidental data loss, type <strong
+              style="font-family: monospace; background: white; padding: 1px 5px; border-radius: 3px; border: 1px solid var(--border);">RESET
+              DEMO DATA</strong> below to enable the reset button:
+          </div>
+        </div>
+        <div class="form-group" style="margin: 0;">
+          <input type="text" class="input-field" id="resetConfirmInput" placeholder="Type RESET DEMO DATA"
+            style="width: 100%; font-family: monospace; font-size: 13px;" autocomplete="off" />
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="resetModal">Cancel</button>
+        <button class="btn btn-primary" id="btnConfirmReset"
+          style="background:var(--danger); border-color:var(--danger);" disabled>
+          Confirm Reset
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
