@@ -37,3 +37,15 @@ Key Features:
 How to run:
 1. Open the folder in VS Code or any static server.
 2. Open index.html in a web browser (e.g. with Live Server or by double clicking index.html).
+
+Direct Installation Engineer (prototype role)
+- Real accounts: Super Admin > Create Account > Direct Install Engineer (Engineer ID, name,
+  email, mobile, password, status). Engineers log in with email or Engineer ID; only Active
+  accounts can sign in, and deactivation ends an open session. Listed under Accounts > Engineers.
+- Demo/prototype fallback login: engineer@hellosolar.ph (or "engineer") / engineer123 -> Engr. Mark Dizon
+- Access: Applications (Hello Solar Direct / internal only, view-only except the Direct
+  Installation action) and Installations (Hello Solar Direct jobs only).
+- Actions: Accept job, Reference Number, Solar Panels, Inverter, Battery,
+  Installation Progress, Complete Installation, Activate System.
+- Progress is saved per APP ID on app.installationProgress and in the shared
+  "hello_solar_installation_progress" store (same structure as the Installer Portal).

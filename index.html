@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-admin-protected class="auth-pending">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hello Solar - Super Admin</title>
+  <style>
+    .auth-pending body {
+      visibility: hidden;
+    }
+  </style>
+  <script src="../shared/hello-solar-config.js"></script>
+  <script src="auth.js"></script>
   <link rel="icon" type="image/png" href="assets/images/logofortab.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20261006-qafix" />
 </head>
 
 <body>
@@ -70,18 +77,6 @@
           <span class="nav-text">Installations</span>
           <span class="nav-badge" id="navBadgeInstalls">7</span>
         </button>
-        <button class="nav-link" data-page="accounts" title="Accounts">
-          <span class="nav-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-          </span>
-          <span class="nav-text">Accounts</span>
-        </button>
         <button class="nav-link" data-page="payments" title="Payments">
           <span class="nav-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -93,8 +88,43 @@
           </span>
           <span class="nav-text">Payments</span>
         </button>
+        <button class="nav-link" data-page="accounting" title="Accounting &amp; Analytics">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </span>
+          <span class="nav-text">Accounting</span>
+        </button>
 
         <div class="nav-section-title">Management</div>
+        <button class="nav-link" data-page="accounts" title="Portal Accounts">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </span>
+          <span class="nav-text">Portal Accounts</span>
+        </button>
+        <button class="nav-link" data-page="create-account" title="Create Account">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="8.5" cy="7" r="4"></circle>
+              <line x1="20" y1="8" x2="20" y2="14"></line>
+              <line x1="23" y1="11" x2="17" y2="11"></line>
+            </svg>
+          </span>
+          <span class="nav-text">Create Account</span>
+        </button>
         <button class="nav-link" data-page="support" title="Support">
           <span class="nav-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -107,6 +137,17 @@
           </span>
           <span class="nav-text">Support</span>
           <span class="nav-badge warn" id="navBadgeSupport">5</span>
+        </button>
+        <button class="nav-link" data-page="inquiries" title="Contact Inquiries">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </span>
+          <span class="nav-text">Contact Inquiries</span>
+          <span class="nav-badge warn" id="navBadgeInquiries" style="display:none;">3</span>
         </button>
         <button class="nav-link" data-page="activity" title="Activity Logs">
           <span class="nav-icon">
@@ -215,7 +256,8 @@
                 <span class="user-name">Limuel Brasona</span>
                 <span class="user-role">Super Admin</span>
               </div>
-              <svg class="user-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="user-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </div>
@@ -229,14 +271,16 @@
               </div>
               <div class="user-dropdown-divider"></div>
               <button class="user-dropdown-item" data-dropdown-go="settings" id="dropdownProfile">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                   <circle cx="12" cy="7" r="4"></circle>
                 </svg>
                 Profile & Settings
               </button>
               <button class="user-dropdown-item" data-dropdown-go="activity" id="dropdownActivity">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="10"></circle>
                   <polyline points="12 6 12 12 16 14"></polyline>
                 </svg>
@@ -244,7 +288,8 @@
               </button>
               <div class="user-dropdown-divider"></div>
               <button class="user-dropdown-item user-dropdown-logout" id="dropdownLogout">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                   <polyline points="16 17 21 12 16 7"></polyline>
                   <line x1="21" y1="12" x2="9" y2="12"></line>
@@ -265,7 +310,7 @@
             <div>
               <div class="eyebrow">COMMAND CENTER</div>
               <h1>Overview</h1>
-              <p>Key operations pulse across the Hello Solar ecosystem and prioritized issues requiring action.</p>
+
             </div>
           </div>
 
@@ -286,8 +331,7 @@
               </div>
               <div class="kpi-value" id="kpiTotalApps">12</div>
               <div class="kpi-foot">
-                <span>Across all lifecycle stages</span>
-                <span class="kpi-action-link">View →</span>
+                <span class="kpi-action-link">View</span>
               </div>
             </article>
 
@@ -303,8 +347,7 @@
               </div>
               <div class="kpi-value" id="kpiActiveInstalls">4</div>
               <div class="kpi-foot">
-                <span>Scheduled, testing & in progress</span>
-                <span class="kpi-action-link">View →</span>
+                <span class="kpi-action-link">View</span>
               </div>
             </article>
 
@@ -320,8 +363,7 @@
               </div>
               <div class="kpi-value" id="kpiCompletedInstalls">2</div>
               <div class="kpi-foot">
-                <span>Commissioned & energized</span>
-                <span class="kpi-action-link">View →</span>
+                <span class="kpi-action-link">View</span>
               </div>
             </article>
 
@@ -339,8 +381,7 @@
               </div>
               <div class="kpi-value" id="kpiTotalFunded">₱4.82M</div>
               <div class="kpi-foot">
-                <span>Approved solar loans & financing</span>
-                <span class="kpi-action-link">View →</span>
+                <span class="kpi-action-link">View</span>
               </div>
             </article>
 
@@ -358,8 +399,7 @@
               </div>
               <div class="kpi-value" id="kpiNeedsAttention">5</div>
               <div class="kpi-foot">
-                <span>Actionable items across portals</span>
-                <span class="kpi-action-link attention-link">Inspect →</span>
+                <span class="kpi-action-link attention-link">Inspect</span>
               </div>
             </article>
           </section>
@@ -369,7 +409,7 @@
             <div class="panel-head">
               <div>
                 <h2>Operations Overview</h2>
-                <p>Compact operational health from each connected portal.</p>
+
               </div>
             </div>
 
@@ -384,7 +424,7 @@
                       <circle cx="12" cy="7" r="4"></circle>
                     </svg>
                   </div>
-                  <div class="ops-title">Customers</div>
+                  <div class="ops-title">Customers Application</div>
                 </div>
                 <div class="ops-metric">
                   <span>Total Accounts</span>
@@ -396,7 +436,7 @@
                 </div>
                 <div class="ops-link">
                   <span>View Customers</span>
-                  <span>→</span>
+
                 </div>
               </div>
 
@@ -428,7 +468,7 @@
                 </div>
                 <div class="ops-link">
                   <span>View Financer Activity</span>
-                  <span>→</span>
+
                 </div>
               </div>
 
@@ -455,7 +495,7 @@
                 </div>
                 <div class="ops-link">
                   <span>View Installer Jobs</span>
-                  <span>→</span>
+
                 </div>
               </div>
 
@@ -482,7 +522,7 @@
                 </div>
                 <div class="ops-link">
                   <span>View Merchants</span>
-                  <span>→</span>
+
                 </div>
               </div>
             </div>
@@ -494,8 +534,7 @@
               <div class="panel-head">
                 <div>
                   <h2>Needs Attention <span class="count-pill" id="overviewAttentionCount">5</span></h2>
-                  <p>Prioritized actionable issues grouped across Applications, Installations, Payments, and Support.
-                  </p>
+
                 </div>
               </div>
 
@@ -511,6 +550,17 @@
               </div>
 
               <div class="attention-list" id="overviewAttentionList"></div>
+
+              <!-- See More / See Less Toggle Control for Needs Attention -->
+              <div class="panel-footer-action" id="overviewAttentionToggleWrap" style="display: none;">
+                <button type="button" class="btn-toggle-see-more" id="toggleAttentionRowsBtn" aria-expanded="false">
+                  <span id="toggleAttentionRowsText">See more</span>
+                  <svg class="toggle-icon toggle-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+              </div>
             </div>
           </section>
 
@@ -520,7 +570,7 @@
               <div class="panel-head">
                 <div>
                   <h2>Recent Activity</h2>
-                  <p>Latest important system events across all portals.</p>
+
                 </div>
                 <button class="btn btn-secondary btn-sm" data-go="activity">View All Activity ↗</button>
               </div>
@@ -534,6 +584,17 @@
               </div>
 
               <div class="activity-stream" id="overviewActivityList"></div>
+
+              <!-- See More / See Less Toggle Control for Recent Activity -->
+              <div class="panel-footer-action" id="overviewActivityToggleWrap" style="display: none;">
+                <button type="button" class="btn-toggle-see-more" id="toggleActivityRowsBtn" aria-expanded="false">
+                  <span id="toggleActivityRowsText">See more</span>
+                  <svg class="toggle-icon toggle-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+              </div>
             </div>
           </section>
         </section>
@@ -544,8 +605,7 @@
             <div>
               <div class="eyebrow">OPERATIONS / LIFECYCLE MANAGEMENT</div>
               <h1>Applications</h1>
-              <p>End-to-end governance: Submitted → Document Review → Financer Review → Approved/Declined → Installer
-                Assignment → Installation.</p>
+
             </div>
             <div class="page-actions">
               <span class="direct-quick-badge" title="Accept eligible projects directly">
@@ -563,7 +623,10 @@
           <div class="toolbar-wrap">
             <div class="filter-tabs" id="appFilterChips">
               <button class="chip-btn active" data-stage="All">All (<span id="countAppAll">12</span>)</button>
-              <button class="chip-btn" data-stage="Submitted">Submitted (<span id="countAppSubmitted">1</span>)</button>
+              <button class="chip-btn" data-stage="Payment Required">Payment Required (<span
+                  id="countAppPaymentRequired">1</span>)</button>
+              <button class="chip-btn" data-stage="Financing Review">Financing Review (<span
+                  id="countAppFinancingReview">1</span>)</button>
               <button class="chip-btn" data-stage="Missing Documents">Missing Documents (<span
                   id="countAppMissing">1</span>)</button>
               <button class="chip-btn" data-stage="Under Review">Under Review (<span
@@ -579,6 +642,8 @@
                 placeholder="Filter by ID, Customer, Location..." />
               <select class="input-field" id="appFinancerFilter">
                 <option value="All">All Financers</option>
+                <option value="Not Required">Not Required (Full Payment)</option>
+                <option value="Pending">Pending Assignment</option>
                 <option value="SunFund Philippines">SunFund</option>
                 <option value="BDO Green Energy Financing">BDO</option>
                 <option value="UnionBank Solar Loan Program">UnionBank</option>
@@ -595,6 +660,7 @@
                   <th>Application ID</th>
                   <th>Location</th>
                   <th>Customer</th>
+                  <th>Payment Type</th>
                   <th>Current Stage</th>
                   <th>Financer</th>
                   <th>Installer</th>
@@ -613,8 +679,7 @@
             <div>
               <div class="eyebrow">OPERATIONS / SOLAR PROJECTS</div>
               <h1>Installations</h1>
-              <p>Central monitoring for Partner Installer jobs, Hello Solar Direct Installations, and Maintenance tasks.
-              </p>
+
             </div>
             <div class="page-actions">
               <button class="btn btn-primary" id="btnNewInstallModalOpen">
@@ -674,25 +739,34 @@
           </div>
         </section>
 
-        <!-- 4. ACCOUNTS PAGE -->
+        <!-- 4. PORTAL ACCOUNTS PAGE (Management) -->
         <section class="page" id="page-accounts">
           <div class="page-head">
             <div>
-              <div class="eyebrow">OPERATIONS / STAKEHOLDER MANAGEMENT</div>
-              <h1>Accounts</h1>
-              <p>Unified directory for Customers, Financers, Installers, and Merchants.</p>
+              <div class="eyebrow">MANAGEMENT / STAKEHOLDER DIRECTORY</div>
+              <h1>Portal Accounts</h1>
+
             </div>
-            <div class="page-actions">
+            <div class="page-actions" style="display:flex; align-items:center; gap:8px;">
               <button class="btn btn-secondary" id="btnExportAccounts">Export Directory</button>
+              <button class="btn btn-primary" id="btnGoToCreateAccount"
+                style="display:inline-flex; align-items:center; gap:6px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>Create Account
+              </button>
             </div>
           </div>
 
           <!-- Subtabs for Account Types -->
           <div class="subtabs-bar" id="accountSubtabs">
             <button class="subtab active" data-tab="customers">Customers (<span id="accountCountCust">9</span>)</button>
-            <button class="subtab" data-tab="financers">Financers (<span id="accountCountFin">4</span>)</button>
             <button class="subtab" data-tab="installers">Installers (<span id="accountCountInst">5</span>)</button>
             <button class="subtab" data-tab="merchants">Merchants (<span id="accountCountMerch">4</span>)</button>
+            <button class="subtab" data-tab="financers">Financers (<span id="accountCountFin">4</span>)</button>
+            <button class="subtab" data-tab="engineers">Engineers (<span id="accountCountEng">0</span>)</button>
           </div>
 
           <!-- Toolbar -->
@@ -719,18 +793,418 @@
           </div>
         </section>
 
+        <!-- 4B. CREATE ACCOUNT PAGE (Management) -->
+        <section class="page" id="page-create-account">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">MANAGEMENT / ONBOARDING</div>
+              <h1>Create Account</h1>
+
+            </div>
+            <div class="page-actions">
+              <button class="btn btn-secondary" id="btnNavToPortalAccounts">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"
+                  style="margin-right:6px; display:inline-block; vertical-align:-2px;">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>View Portal Accounts
+              </button>
+            </div>
+          </div>
+
+          <!-- Account Type / Role Selector at the top -->
+          <div class="create-acc-wrapper" style="max-width: 860px; margin: 0 auto;">
+
+            <div style="margin-bottom: 22px;">
+              <label class="form-label"
+                style="font-size: 13px; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between;">
+                <span>Select Account Type / Role</span>
+                <span style="font-size: 11.5px; font-weight: 500; color: var(--muted);">Click to switch role form</span>
+              </label>
+
+              <div class="role-selector-bar" id="createAccountRoleTabs">
+                <button type="button" class="role-selector-btn active" data-role="Customer">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <span>Customer</span>
+                </button>
+                <button type="button" class="role-selector-btn" data-role="Installer">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                  <span>Installer</span>
+                </button>
+                <button type="button" class="role-selector-btn" data-role="Financer">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                  </svg>
+                  <span>Financer</span>
+                </button>
+                <button type="button" class="role-selector-btn" data-role="Merchant">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                  <span>Merchant</span>
+                </button>
+                <button type="button" class="role-selector-btn" data-role="Engineer">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                    </path>
+                  </svg>
+                  <span>Direct Install Engineer</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Main Creation Card -->
+            <div class="panel" style="padding: 26px 28px;">
+              <form id="createAccountForm" autocomplete="off" novalidate>
+
+                <div class="panel-head"
+                  style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light);">
+                  <div>
+                    <h2 id="createAccCardTitle" style="display: flex; align-items: center; gap: 10px; font-size: 19px;">
+                      <span>Create Customer Account</span>
+                      <span class="status-pill warn" id="createAccRoleBadge"
+                        style="font-size: 11px; font-weight: 700;">Customer Portal</span>
+                    </h2>
+                    <p id="createAccCardDesc" style="font-size: 13px; color: var(--muted); margin-top: 4px;">Register a
+                      new customer account to access proposals, applications, and payments.</p>
+                  </div>
+                </div>
+
+                <!-- Account Role & Status: internal only (role follows the selected tab; status defaults to Active) -->
+                <div id="createAccRoleStatusRow" hidden aria-hidden="true" style="display: none;">
+                  <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label" for="newAccRole">Account Role</label>
+                    <select class="input-field" id="newAccRole" style="width: 100%;" tabindex="-1">
+                      <option value="Customer">Customer (Client Portal)</option>
+                      <option value="Installer">Installer (Field &amp; Contractor Portal)</option>
+                      <option value="Financer">Financer (Lending &amp; Credit Portal)</option>
+                      <option value="Merchant">Merchant (Supplier &amp; Hardware Portal)</option>
+                      <option value="Engineer">Direct Installation Engineer</option>
+                    </select>
+                  </div>
+                  <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label" for="newAccStatus">Initial Account Status</label>
+                    <select class="input-field" id="newAccStatus" style="width: 100%;" tabindex="-1">
+                      <option value="Active" selected>Active (Immediate Access)</option>
+                      <option value="Pending Activation">Pending Activation (Email Invite)</option>
+                      <option value="Inactive">Inactive (Disabled)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Section: Personal Information -->
+                <div
+                  style="font-size: 12px; font-weight: 800; color: var(--ink-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin: 20px 0 12px; display: flex; align-items: center; gap: 8px;">
+                  <span>Basic Information</span>
+                  <div style="flex: 1; height: 1px; background: var(--border-light);"></div>
+                </div>
+
+                <div
+                  style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-bottom: 16px;">
+                  <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label" for="newAccFirstName">First Name <span
+                        style="color: var(--primary);">*</span></label>
+                    <input type="text" class="input-field" id="newAccFirstName" placeholder="e.g. Maria Elena"
+                      style="width: 100%;" required />
+                    <div class="form-error" id="errNewAccFirstName">First name is required.</div>
+                  </div>
+                  <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label" for="newAccLastName">Last Name <span
+                        style="color: var(--primary);">*</span></label>
+                    <input type="text" class="input-field" id="newAccLastName" placeholder="e.g. Cruz"
+                      style="width: 100%;" required />
+                    <div class="form-error" id="errNewAccLastName">Last name is required.</div>
+                  </div>
+                </div>
+
+                <div
+                  style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-bottom: 16px;">
+                  <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label" for="newAccEmail">Email Address <span
+                        style="color: var(--primary);">*</span></label>
+                    <input type="email" class="input-field" id="newAccEmail" placeholder="e.g. elena.cruz@gmail.com"
+                      style="width: 100%;" required />
+                    <div class="form-error" id="errNewAccEmail">Valid email address is required.</div>
+                  </div>
+                  <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label" for="newAccPhone">Phone Number <span
+                        style="color: var(--primary);">*</span></label>
+                    <input type="tel" class="input-field" id="newAccPhone" placeholder="e.g. +63 917 234 5678"
+                      style="width: 100%;" required />
+                    <div class="form-error" id="errNewAccPhone">Phone number is required.</div>
+                  </div>
+                </div>
+
+                <!-- Customer Automated Account Activation Notice (Shown for Customer Role) -->
+                <div id="customerActivationNotice" style="display: block;">
+                  <div class="sa-callout sa-callout-success">
+                    <span class="sa-callout-icon" aria-hidden="true">✉</span>
+                    <div>
+                      <strong>Customer sets their own password</strong>
+                      <p>The account starts as <strong>Pending Activation</strong>. After creating it, use <strong>Send
+                          Activation Email</strong> so the customer can activate it. No password is needed here.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Password Row (Hidden for Customer, Shown for Partner/Staff roles) -->
+                <div class="form-group" id="nonCustomerPasswordRow" style="margin-bottom: 16px; display: none;">
+                  <label class="form-label" for="newAccPassword"
+                    style="display: flex; justify-content: space-between; align-items: center;">
+                    <span>Temporary Password <span style="color: var(--primary);">*</span></span>
+                    <button type="button" id="btnGenPassword"
+                      style="background: none; border: none; color: var(--primary); font-size: 11.5px; font-weight: 700; cursor: pointer; padding: 0;">
+                      Generate
+                    </button>
+                  </label>
+                  <div style="position: relative;">
+                    <input type="password" class="input-field" id="newAccPassword" value="Solar2026!Pass"
+                      style="width: 100%; padding-right: 44px; font-family: monospace;" required />
+                    <button type="button" id="btnTogglePasswordVisibility" class="password-toggle-btn"
+                      title="Show password" aria-label="Show password">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="form-error" id="errNewAccPassword">Password must be at least 6 characters.</div>
+                  <div class="sa-hint">Shared with the account holder for first sign-in.</div>
+                </div>
+
+                <!-- Dynamic Business Information Section -->
+                <div id="businessFieldsSection">
+                  <div
+                    style="font-size: 12px; font-weight: 800; color: var(--ink-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin: 24px 0 12px; display: flex; align-items: center; gap: 8px;">
+                    <span id="businessSectionTitle">Location &amp; Project Information</span>
+                    <div style="flex: 1; height: 1px; background: var(--border-light);"></div>
+                  </div>
+
+                  <!-- Dynamic Field Grid -->
+                  <div id="dynamicRoleFieldsGrid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-bottom: 16px;">
+                    <!-- Injected dynamically via JS based on selected role -->
+                  </div>
+                </div>
+
+                <!-- Onboarding Note / Memo (Optional) -->
+                <div class="form-group" id="createAccNotesRow" style="margin-bottom: 22px;">
+                  <label class="form-label" for="newAccNotes">Admin Note <span
+                      class="sa-optional">(optional)</span></label>
+                  <textarea class="input-field" id="newAccNotes" rows="2"
+                    placeholder="Internal note, e.g. onboarding batch or partner agreement reference"
+                    style="width: 100%; resize: vertical;"></textarea>
+                </div>
+
+                <!-- Action Foot -->
+                <div
+                  style="display: flex; align-items: center; justify-content: space-between; padding-top: 18px; border-top: 1px solid var(--border-light); flex-wrap: wrap; gap: 12px;">
+                  <div style="font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="16" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <span>Account will be instantly viewable in Portal Accounts.</span>
+                  </div>
+
+                  <div style="display: flex; align-items: center; gap: 10px;">
+                    <button type="button" class="btn btn-secondary" id="btnResetAccountForm">Reset</button>
+                    <button type="submit" class="btn btn-primary" id="btnSubmitCreateAccount"
+                      style="display: flex; align-items: center; gap: 6px;">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      <span>Create Account</span>
+                    </button>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+            <!-- Success Alert Banner (Hidden by default, shown after creation with quick link) -->
+            <div id="createAccSuccessCard" class="sa-success-card" style="display: none;" role="status"
+              aria-live="polite">
+              <div class="sa-success-head">
+                <div class="sa-success-icon" aria-hidden="true">✓</div>
+                <div class="sa-success-text">
+                  <strong>Account created · <span id="createAccSuccessId">—</span></strong>
+                  <p id="createAccSuccessMsg"></p>
+                </div>
+              </div>
+              <!-- Customer Activation Link Box -->
+              <div id="createAccActivationBox" class="sa-activation-box" style="display: none;">
+                <div class="sa-activation-head">
+                  <span>Account activation</span>
+                  <span class="status-pill warn" id="createAccInvitationStatusBadge">Pending Activation</span>
+                </div>
+                <p id="createAccActivationNote">The customer activates the account and sets a password from the
+                  activation email.</p>
+                <!-- Activation link/token stays internal for backend email delivery -->
+                <input type="hidden" id="createAccActivationLinkInput" value="" />
+                <div class="sa-card-foot" style="margin-top:8px; justify-content:flex-end;">
+                  <button type="button" class="btn btn-primary btn-sm" id="btnSendActivationEmail">Send Activation
+                    Email</button>
+                </div>
+              </div>
+              <div class="sa-success-actions">
+                <button type="button" class="btn btn-secondary btn-sm" id="btnCreateAnotherAcc">Create Another</button>
+                <button type="button" class="btn btn-primary btn-sm" id="btnViewCreatedAccInPortal">View in Portal
+                  Accounts</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 5B. ACCOUNTING / ANALYTICS PAGE (Super Admin only) -->
+        <section class="page" id="page-accounting">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">OPERATIONS / ACCOUNTING &amp; ANALYTICS</div>
+              <h1>Accounting</h1>
+            </div>
+          </div>
+
+          <div class="ops-grid sa-kpi-compact" style="margin-bottom: 20px;">
+            <div class="ops-card">
+              <div class="ops-head">
+                <div class="ops-title">Portfolio &amp; Revenue</div>
+              </div>
+              <div class="ops-metric"><span>Total Portfolio</span><strong id="accTotalPortfolio">—</strong></div>
+              <div class="ops-metric"><span>Expected Revenue (<span id="accPeriod">—</span>)</span><strong
+                  id="accExpectedRevenue" style="color:var(--brand);">—</strong></div>
+              <div class="ops-metric"><span>Collected Revenue (to date)</span><strong id="accCollectedRevenue"
+                  style="color:var(--success);">—</strong></div>
+              <div class="ops-metric"><span>Collected this period</span><strong id="accCollectedPeriod">—</strong></div>
+            </div>
+
+            <div class="ops-card">
+              <div class="ops-head">
+                <div class="ops-title">HS vs Third-Party Revenue</div>
+              </div>
+              <div class="ops-metric"><span>HS Revenue</span><strong id="accHsRevenue">—</strong></div>
+              <div class="ops-metric"><span>Third-Party Revenue</span><strong id="accThirdPartyRevenue">—</strong></div>
+              <div class="acc-split-bar" aria-hidden="true"><span id="accHsBar"></span></div>
+              <div class="ops-metric" style="border-top:none; padding-top:4px;"><span id="accSplitLabel"
+                  style="font-size:11.5px;">—</span></div>
+            </div>
+
+            <div class="ops-card">
+              <div class="ops-head">
+                <div class="ops-title" style="color:var(--danger);">Overdue</div>
+              </div>
+              <div class="ops-metric"><span>Overdue Amount</span><strong id="accOverdueAmount"
+                  style="color:var(--danger);">—</strong></div>
+              <div class="ops-metric"><span>Overdue Accounts</span><strong id="accOverdueAccounts">—</strong></div>
+            </div>
+
+            <div class="ops-card">
+              <div class="ops-head">
+                <div class="ops-title">Financer Contracts</div>
+              </div>
+              <div class="ops-metric"><span>Active</span><strong id="accContractsActive"
+                  style="color:var(--success);">—</strong></div>
+              <div class="ops-metric"><span>Expired</span><strong id="accContractsExpired">—</strong></div>
+              <div class="ops-metric"><span>Terminated / Pending Start</span><strong id="accContractsOther">—</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Installation Cost (Hello Solar Direct projects only) -->
+          <div class="sa-section-head">
+            <div>
+              <h3>Installation Cost <span class="status-pill direct">Hello Solar Direct</span></h3>
+              <p>Materials, labor and transport/misc per APP ID. Partner-installed projects are excluded.</p>
+            </div>
+            <div class="sa-section-tools">
+              <div class="sa-stat"><span>Projects</span><strong id="accInstCostProjects">—</strong></div>
+              <div class="sa-stat"><span>Total Cost</span><strong id="accInstCostTotal">—</strong></div>
+              <input type="search" class="input-field" id="accInstCostSearch"
+                placeholder="Search APP ID, HS ID, customer..." aria-label="Search installation costs" />
+            </div>
+          </div>
+          <div class="table-container sa-table" style="margin-bottom: 20px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Application ID</th>
+                  <th>Customer</th>
+                  <th class="num">Materials</th>
+                  <th class="num">Labor</th>
+                  <th class="num">Transport / Misc</th>
+                  <th class="num">Total Cost</th>
+                  <th style="text-align: right;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="accInstCostTableBody"></tbody>
+            </table>
+          </div>
+
+          <!-- System Connection Control (Immediate System Disconnect — Super Admin only) -->
+          <div class="sa-section-head">
+            <div>
+              <h3>System Connection Control</h3>
+              <p>Disconnect requests go to the backend / inverter API and stay <strong>Disconnect Requested</strong>
+                until confirmed. A valid HS ID is required.</p>
+            </div>
+            <div class="sa-section-tools">
+              <input type="search" class="input-field" id="accSystemSearch"
+                placeholder="Search APP ID, HS ID, customer..." aria-label="Search systems" />
+            </div>
+          </div>
+          <div class="table-container sa-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Application ID</th>
+                  <th>HS ID</th>
+                  <th>Customer</th>
+                  <th>Payment Status</th>
+                  <th>Connection Status</th>
+                  <th style="text-align: right;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="accSystemsTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
         <!-- 5. PAYMENTS PAGE -->
         <section class="page" id="page-payments">
           <div class="page-head">
             <div>
               <div class="eyebrow">OPERATIONS / FINANCIAL MONITORING</div>
               <h1>Payments</h1>
-              <p>Monitor financed solar project repayments, amortization schedules, and collection health.</p>
+
             </div>
           </div>
 
           <!-- Payment KPI summary banner -->
-          <div class="ops-grid" style="margin-bottom: 24px;">
+          <div class="ops-grid payments-kpi-grid sa-kpi-compact" style="margin-bottom: 20px;">
+            <!-- 1. Total Portfolio Value -->
             <div class="ops-card">
               <div class="ops-head">
                 <div class="ops-icon">
@@ -741,62 +1215,49 @@
                     <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
                   </svg>
                 </div>
-                <div class="ops-title">Total Financed Capital</div>
+                <div class="ops-title">Total Portfolio Value</div>
               </div>
               <div class="ops-metric">
-                <span>Active Financed Capital</span>
-                <strong id="payTotalVolume">₱7,240,000</strong>
+                <span>Total Portfolio</span>
+                <strong id="payTotalPortfolioValue">—</strong>
               </div>
               <div class="ops-metric">
-                <span>Active Accounts</span>
-                <strong id="payActiveCount">12</strong>
+                <span>HS Funded</span>
+                <strong id="payHsFunded">—</strong>
+              </div>
+              <div class="ops-metric">
+                <span>Third-Party Funded</span>
+                <strong id="payThirdPartyFunded">—</strong>
               </div>
             </div>
 
+            <!-- 2. Expected Revenue -->
             <div class="ops-card">
               <div class="ops-head">
                 <div class="ops-icon">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                   </svg>
                 </div>
-                <div class="ops-title">Expected This Month</div>
+                <div class="ops-title">Expected Revenue</div>
               </div>
               <div class="ops-metric">
-                <span>Expected Monthly Amort.</span>
-                <strong id="payMonthlyExpected">₱166,200</strong>
+                <span>Total Expected</span>
+                <strong id="payExpectedRevenue" style="color:var(--brand);">—</strong>
               </div>
               <div class="ops-metric">
-                <span>Collections Received (MTD)</span>
-                <strong id="payReceivedThisMonth">₱79,200</strong>
+                <span>HS Revenue</span>
+                <strong id="payHsRevenue">—</strong>
+              </div>
+              <div class="ops-metric">
+                <span>Third-Party Revenue</span>
+                <strong id="payThirdPartyRevenue">—</strong>
               </div>
             </div>
 
-            <div class="ops-card">
-              <div class="ops-head">
-                <div class="ops-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                </div>
-                <div class="ops-title">Repayment Health</div>
-              </div>
-              <div class="ops-metric">
-                <span>Accounts Current</span>
-                <strong id="payOnTimePercent" style="color:var(--success)">83%</strong>
-              </div>
-              <div class="ops-metric">
-                <span>Due in Next 7 Days</span>
-                <strong id="payDueSoonCount">3</strong>
-              </div>
-            </div>
-
+            <!-- 3. Overdue Accounts -->
             <div class="ops-card">
               <div class="ops-head">
                 <div class="ops-icon" style="color:var(--danger)">
@@ -810,12 +1271,12 @@
                 <div class="ops-title">Overdue Accounts</div>
               </div>
               <div class="ops-metric">
-                <span>Overdue Accounts</span>
-                <strong id="payOverdueCount" style="color:var(--danger)">2</strong>
+                <span>Accounts Overdue</span>
+                <strong id="payOverdueCount" style="color:var(--danger)">—</strong>
               </div>
               <div class="ops-metric">
                 <span>Action Status</span>
-                <strong id="payOverdueActionStatus">2 accounts flagged</strong>
+                <strong id="payOverdueActionStatus">—</strong>
               </div>
             </div>
           </div>
@@ -824,6 +1285,7 @@
           <div class="toolbar-wrap">
             <div class="filter-tabs" id="paymentFilterTabs">
               <button class="chip-btn active" data-status="All">All</button>
+              <button class="chip-btn" data-status="Verification Required">Verification Required</button>
               <button class="chip-btn" data-status="On Time">On Time</button>
               <button class="chip-btn" data-status="Due Soon">Due Soon</button>
               <button class="chip-btn" data-status="Overdue">Overdue</button>
@@ -831,7 +1293,8 @@
             </div>
 
             <div class="filter-group">
-              <input type="search" class="input-field" id="paymentSearchInput" placeholder="Search payments..." />
+              <input type="search" class="input-field" id="paymentSearchInput"
+                placeholder="Search by ID, customer, payment type..." />
             </div>
           </div>
 
@@ -842,11 +1305,10 @@
                 <tr>
                   <th>Application ID</th>
                   <th>Customer</th>
-                  <th>Financer</th>
-                  <th>Funded Amount</th>
-                  <th>Monthly Payment</th>
+                  <th>Payment Type</th>
+                  <th>Amount</th>
                   <th>Payment Status</th>
-                  <th>Next Due Date</th>
+                  <th>Due / Uploaded Date</th>
                   <th style="text-align: right;">Action</th>
                 </tr>
               </thead>
@@ -861,7 +1323,7 @@
             <div>
               <div class="eyebrow">MANAGEMENT / HELP DESK</div>
               <h1>Support</h1>
-              <p>Consolidated support tickets across Customer, Financer, Installer, and Merchant portals.</p>
+
             </div>
             <div class="page-actions">
               <button class="btn btn-secondary" id="btnExportSupport">Export Tickets</button>
@@ -902,7 +1364,7 @@
             <table>
               <thead>
                 <tr>
-                  <th>Ticket ID</th>
+                  <th style="white-space: nowrap;">Ticket ID</th>
                   <th>Account Type</th>
                   <th>Account / Project ID</th>
                   <th>Concern</th>
@@ -917,13 +1379,153 @@
           </div>
         </section>
 
+        <!-- 6B. CONTACT INQUIRIES PAGE -->
+        <section class="page" id="page-inquiries">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">MANAGEMENT / PUBLIC INQUIRIES</div>
+              <h1>Contact Inquiries</h1>
+
+            </div>
+            <div class="page-actions">
+              <button class="btn btn-secondary" id="btnExportInquiries">Export Inquiries</button>
+            </div>
+          </div>
+
+          <!-- Inquiries KPI Grid -->
+          <div class="kpi-grid"
+            style="grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); margin-bottom: 20px;">
+            <div class="kpi-card" style="cursor: default;">
+              <div class="kpi-top">
+                <span>Total</span>
+                <div class="kpi-icon-box">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="kpi-value" id="inqKpiTotal">8</div>
+            </div>
+
+            <div class="kpi-card" style="cursor: pointer;" id="inqKpiCardUnread">
+              <div class="kpi-top">
+                <span>Unread</span>
+                <div class="kpi-icon-box" style="color: var(--warning); background: rgba(245, 158, 11, 0.1);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="kpi-value" id="inqKpiUnread" style="color: var(--warning);">3</div>
+              <div class="kpi-foot">
+                <span class="kpi-action-link" style="color: var(--warning);">Filter</span>
+              </div>
+            </div>
+
+            <div class="kpi-card" style="cursor: pointer;" id="inqKpiCardReplied">
+              <div class="kpi-top">
+                <span>Replied</span>
+                <div class="kpi-icon-box" style="color: var(--success); background: rgba(16, 185, 129, 0.1);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="kpi-value" id="inqKpiReplied" style="color: var(--success);">5</div>
+              <div class="kpi-foot">
+                <span class="kpi-action-link" style="color: var(--success);">Filter</span>
+              </div>
+            </div>
+
+            <div class="kpi-card" style="cursor: default;">
+              <div class="kpi-top">
+                <span>Latest</span>
+                <div class="kpi-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="kpi-value" id="inqKpiLatest" style="font-size: 18px;">45 mins ago</div>
+              <div class="kpi-foot">
+                <span class="sub-info" style="margin:0;" id="inqKpiLatestSender">Engr. Marco Villanueva</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Toolbar -->
+          <div class="toolbar-wrap">
+            <div class="filter-tabs" id="inquiryStatusFilterTabs">
+              <button class="chip-btn active" data-status="All">All (<span id="inquiryCountAll">8</span>)</button>
+              <button class="chip-btn" data-status="Unread">Unread (<span id="inquiryCountUnread">3</span>)</button>
+              <button class="chip-btn" data-status="Replied">Replied (<span id="inquiryCountReplied">5</span>)</button>
+            </div>
+
+            <div class="filter-group">
+              <input type="search" class="input-field" id="inquirySearchInput" placeholder="Search inquiries..."
+                style="min-width: 200px;" />
+              <select class="input-field" id="inquiryResponseFilterSelect">
+                <option value="All">All Inquiry Statuses</option>
+                <option value="Not Sent">Not Sent</option>
+                <option value="Awaiting Response">Awaiting Response</option>
+                <option value="Proceed">Proceed</option>
+                <option value="Not Proceeding">Not Proceeding</option>
+                <option value="Pending Review">Pending Review (Partner)</option>
+                <option value="Approved">Approved (Partner)</option>
+              </select>
+              <select class="input-field" id="inquiryPaymentFilterSelect">
+                <option value="All">All Payments</option>
+                <option value="Full Payment">Full Payment</option>
+                <option value="Installment">Installment</option>
+              </select>
+              <select class="input-field" id="inquiryCategorySelect">
+                <option value="All">All Categories</option>
+                <option value="Residential Solar">Residential Solar</option>
+                <option value="Commercial Solar">Commercial Solar</option>
+                <option value="Battery Storage">Battery Storage</option>
+                <option value="Financing Options">Financing Options</option>
+                <option value="Partnership">Partnership</option>
+                <option value="Agricultural Solar">Agricultural Solar</option>
+                <option value="Financer Partner">Financer Partner</option>
+                <option value="Installer Partner">Installer Partner</option>
+                <option value="Merchant Partner">Merchant Partner</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Inquiries Table -->
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Sender</th>
+                  <th style="width: 130px;">Category</th>
+                  <th style="width: 140px;">Payment Preference</th>
+                  <th style="width: 110px;">Message Status</th>
+                  <th style="width: 150px;">Inquiry Status</th>
+                  <th style="width: 100px;">Received</th>
+                  <th style="text-align: right; width: 170px;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="inquiriesTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
         <!-- 7. ACTIVITY LOG PAGE -->
         <section class="page" id="page-activity">
           <div class="page-head">
             <div>
               <div class="eyebrow">MANAGEMENT / AUDIT TRAIL</div>
               <h1>Activity Logs</h1>
-              <p>Searchable system activity log for governance, accountability, and traceability.</p>
+
             </div>
             <div class="page-actions">
               <button class="btn btn-secondary" id="btnExportActivity">Export Audit Log (JSON)</button>
@@ -975,10 +1577,9 @@
             <div>
               <div class="eyebrow">SYSTEM / ADMINISTRATIVE CONTROLS</div>
               <h1>Settings</h1>
-              <p>Platform parameters, Hello Solar Direct Installation options, and alert thresholds.</p>
             </div>
-            <div class="page-actions" style="display:flex; align-items:center; gap:12px;">
-              <span id="settingsSaveStatus" style="font-size:12px; color:var(--muted); font-weight:500;"></span>
+            <div class="page-actions settings-actions">
+              <span id="settingsSaveStatus" role="status" aria-live="polite"></span>
               <button class="btn btn-primary" id="btnSaveSettings" disabled>Save Preferences</button>
             </div>
           </div>
@@ -989,7 +1590,7 @@
               <div class="panel-head">
                 <div>
                   <h2>General Settings</h2>
-                  <p>Platform identity, operating timezone, currency, and escalation email.</p>
+
                 </div>
               </div>
               <div class="form-group">
@@ -1031,31 +1632,28 @@
               <div class="panel-head">
                 <div>
                   <h2>Hello Solar Direct Installation</h2>
-                  <p>Capacity limits and assignment rules for internal engineering teams.</p>
+
                 </div>
               </div>
               <div class="form-group">
-                <label class="form-label" for="setDirectTeam">Designated Internal Engineering Unit</label>
+                <label class="form-label" for="setDirectTeam">Internal Installation Team</label>
                 <input class="input-field" style="width:100%;" id="setDirectTeam"
                   value="Hello Solar Central Operations (Team Alpha)" />
                 <div class="form-error" id="errSetDirectTeam"></div>
               </div>
               <div class="form-group">
-                <label class="form-label" for="setMaxDirect">Maximum Concurrent Direct Projects</label>
+                <label class="form-label" for="setMaxDirect">Maximum Active Direct Projects</label>
                 <input type="number" min="1" step="1" class="input-field" style="width:100%;" id="setMaxDirect"
                   value="12" />
                 <div class="form-error" id="errSetMaxDirect"></div>
-                <div class="form-help">Prevents overbooking internal field technicians beyond configured capacity.</div>
+
               </div>
               <div class="form-group" style="margin-bottom:0;">
-                <label class="form-label"
-                  style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;"
-                  for="setDirectConfirm">
-                  <span>Require Confirmation for Direct Installation Acceptance</span>
-                  <input type="checkbox" id="setDirectConfirm" checked
-                    style="width:18px; height:18px; cursor:pointer;" />
+                <label class="settings-confirm" for="setDirectConfirm">
+                  <input type="checkbox" id="setDirectConfirm" checked />
+                  <span>Confirm Before Accepting Direct Installations</span>
                 </label>
-                <div class="form-help">Displays the verification modal before assigning direct installation jobs.</div>
+
               </div>
             </div>
 
@@ -1064,31 +1662,30 @@
               <div class="panel-head">
                 <div>
                   <h2>Operational Alert Thresholds</h2>
-                  <p>Dynamic triggers driving the Needs Attention list, delinquency notices, and project delay flags.
-                  </p>
+
                 </div>
               </div>
               <div class="thresholds-grid">
                 <div class="form-group">
-                  <label class="form-label" for="setOverdueDays">Mark Payment Overdue After (Days)</label>
+                  <label class="form-label" for="setOverdueDays">Payment Overdue After (Days)</label>
                   <input type="number" min="0" step="1" class="input-field" style="width:100%;" id="setOverdueDays"
                     value="5" />
                   <div class="form-error" id="errSetOverdueDays"></div>
-                  <div class="form-help">Missed payments exceeding this grace threshold are flagged as Overdue.</div>
+
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="setDelayDays">Mark Installation Delayed After (Days)</label>
+                  <label class="form-label" for="setDelayDays">Installation Delayed After (Days)</label>
                   <input type="number" min="0" step="1" class="input-field" style="width:100%;" id="setDelayDays"
                     value="1" />
                   <div class="form-error" id="errSetDelayDays"></div>
-                  <div class="form-help">Installations past their schedule by this threshold trigger delay alerts.</div>
+
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="setDocHours">Flag Document Review After (Hours)</label>
+                  <label class="form-label" for="setDocHours">Document Review Alert After (Hours)</label>
                   <input type="number" min="0" step="1" class="input-field" style="width:100%;" id="setDocHours"
                     value="48" />
                   <div class="form-error" id="errSetDocHours"></div>
-                  <div class="form-help">Incomplete KYC reviews exceeding this duration are escalated.</div>
+
                 </div>
               </div>
             </div>
@@ -1132,6 +1729,137 @@
   </div>
 
   <!-- ==================== MODALS & DRAWERS ==================== -->
+
+  <!-- DIRECT INSTALLATION ENGINEER WORKSPACE (accept, equipment, progress, complete, activate) -->
+  <div class="modal-overlay" id="directEngineerModal" role="dialog" aria-modal="true" aria-labelledby="deTitle">
+    <div class="modal-card modal-lg">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow" id="deEyebrow">DIRECT INSTALLATION</div>
+          <h2 id="deTitle">Direct Installation</h2>
+        </div>
+        <button class="modal-close-btn" data-close-modal="directEngineerModal" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="deJobId" />
+        <div class="detail-grid" style="margin-bottom:14px;">
+          <div class="detail-item"><span>Project / APP ID</span><strong id="deIds">—</strong></div>
+          <div class="detail-item"><span>Status</span><strong><span class="status-pill"
+                id="deStatusPill">—</span></strong></div>
+          <div class="detail-item"><span>Customer</span><strong id="deCustomer">—</strong></div>
+          <div class="detail-item"><span>System / Location</span><strong id="deSystem">—</strong></div>
+        </div>
+
+        <div id="deAlert" class="de-alert" role="alert" hidden></div>
+        <p id="deHint" class="de-hint"></p>
+
+        <form id="deForm" novalidate>
+          <div class="de-section">
+            <div class="form-label de-section-title">Reference Number</div>
+            <div class="form-group" style="margin:0;">
+              <label class="form-label" for="deReference">Reference Number <span
+                  style="color:var(--danger, #cf1322);">*</span></label>
+              <input class="input-field" id="deReference" maxlength="60" placeholder="e.g., JO-2026-0142"
+                style="width:100%;" />
+            </div>
+          </div>
+
+          <div class="de-section">
+            <div class="form-label de-section-title">Solar Panels</div>
+            <div class="de-grid">
+              <div class="form-group"><label class="form-label" for="dePanelBrand">Brand</label><input
+                  class="input-field" id="dePanelBrand" data-group="solarPanels" data-key="brand" maxlength="60" />
+              </div>
+              <div class="form-group"><label class="form-label" for="dePanelModel">Model</label><input
+                  class="input-field" id="dePanelModel" data-group="solarPanels" data-key="model" maxlength="80" />
+              </div>
+              <div class="form-group"><label class="form-label" for="dePanelWattage">Wattage per Panel (W)</label><input
+                  class="input-field" type="number" min="0" id="dePanelWattage" data-group="solarPanels"
+                  data-key="wattage" data-unit="W" /></div>
+              <div class="form-group"><label class="form-label" for="dePanelQty">Quantity Installed</label><input
+                  class="input-field" type="number" min="0" id="dePanelQty" data-group="solarPanels"
+                  data-key="quantity" /></div>
+              <div class="form-group de-full"><label class="form-label" for="dePanelSerials">Serial
+                  Numbers</label><textarea class="input-field" rows="2" id="dePanelSerials" data-group="solarPanels"
+                  data-key="serialNumbers" placeholder="One per line or comma-separated"></textarea></div>
+            </div>
+          </div>
+
+          <div class="de-section">
+            <div class="form-label de-section-title">Inverter</div>
+            <div class="de-grid">
+              <div class="form-group"><label class="form-label" for="deInvBrand">Brand</label><input class="input-field"
+                  id="deInvBrand" data-group="inverter" data-key="brand" maxlength="60" /></div>
+              <div class="form-group"><label class="form-label" for="deInvModel">Model</label><input class="input-field"
+                  id="deInvModel" data-group="inverter" data-key="model" maxlength="80" /></div>
+              <div class="form-group"><label class="form-label" for="deInvCapacity">Capacity (kW)</label><input
+                  class="input-field" type="number" min="0" step="0.1" id="deInvCapacity" data-group="inverter"
+                  data-key="capacityKw" data-unit="kW" /></div>
+              <div class="form-group"><label class="form-label" for="deInvSerial">Serial Number</label><input
+                  class="input-field" id="deInvSerial" data-group="inverter" data-key="serialNumber" maxlength="80" />
+              </div>
+            </div>
+          </div>
+
+          <div class="de-section">
+            <div class="form-label de-section-title">Battery</div>
+            <div class="de-grid">
+              <div class="form-group"><label class="form-label" for="deBatBrand">Brand</label><input class="input-field"
+                  id="deBatBrand" data-group="battery" data-key="brand" maxlength="60" /></div>
+              <div class="form-group"><label class="form-label" for="deBatModel">Model</label><input class="input-field"
+                  id="deBatModel" data-group="battery" data-key="model" maxlength="80" /></div>
+              <div class="form-group"><label class="form-label" for="deBatCapacity">Capacity (kWh)</label><input
+                  class="input-field" type="number" min="0" step="0.1" id="deBatCapacity" data-group="battery"
+                  data-key="capacityKwh" data-unit="kWh" /></div>
+              <div class="form-group"><label class="form-label" for="deBatQty">Quantity</label><input
+                  class="input-field" type="number" min="0" id="deBatQty" data-group="battery" data-key="quantity" />
+              </div>
+              <div class="form-group de-full"><label class="form-label" for="deBatSerials">Serial
+                  Numbers</label><textarea class="input-field" rows="2" id="deBatSerials" data-group="battery"
+                  data-key="serialNumbers" placeholder="Leave blank if no battery is included"></textarea></div>
+            </div>
+          </div>
+
+          <div class="de-section">
+            <div class="form-label de-section-title">Installation Progress</div>
+            <div class="de-grid">
+              <div class="form-group"><label class="form-label" for="dePercent">Progress (%)</label><input
+                  class="input-field" type="number" min="0" max="99" id="dePercent" /></div>
+              <div class="form-group"><label class="form-label" for="deStage">Current Stage</label>
+                <select class="input-field" id="deStage">
+                  <option value="">Select stage</option>
+                  <option>Site Preparation</option>
+                  <option>Mounting &amp; Racking</option>
+                  <option>Solar Panel Installation</option>
+                  <option>DC Wiring &amp; Stringing</option>
+                  <option>Inverter Installation</option>
+                  <option>Battery Installation</option>
+                  <option>AC Wiring &amp; Grid Connection</option>
+                  <option>Testing &amp; Commissioning</option>
+                </select>
+              </div>
+              <div class="form-group de-full">
+                <div class="de-progress-track">
+                  <div class="de-progress-bar" id="deProgressBar"></div>
+                </div>
+              </div>
+              <div class="form-group de-full"><label class="form-label" for="deNotes">Progress Notes</label><textarea
+                  class="input-field" rows="3" id="deNotes" maxlength="1000"
+                  placeholder="Work completed, issues found, next steps…"></textarea></div>
+            </div>
+          </div>
+          <p class="de-hint" id="deLastUpdated" style="margin:0;"></p>
+        </form>
+      </div>
+      <div class="modal-foot de-foot">
+        <button class="btn btn-secondary" data-close-modal="directEngineerModal">Close</button>
+        <button class="btn btn-primary" id="deBtnAccept">Accept Job</button>
+        <button class="btn btn-secondary" id="deBtnSave">Save Progress</button>
+        <button class="btn btn-primary" id="deBtnComplete">Complete Installation</button>
+        <button class="btn btn-primary" id="deBtnActivate">Activate System</button>
+      </div>
+    </div>
+  </div>
 
   <!-- 1. HELLO SOLAR DIRECT INSTALLATION CONFIRMATION MODAL -->
   <div class="modal-overlay" id="directInstallModal">
@@ -1244,7 +1972,8 @@
               </div>
               <div>
                 <h4>Eligible for Direct Installation</h4>
-                <p>This approved application currently has no installer assigned and can be directly installed by the
+                <p>This application is Ready for Installation, currently has no installer assigned, and can be directly
+                  installed by the
                   Hello Solar internal team.</p>
                 <button class="btn btn-primary btn-sm" id="btnDrawerDirectAccept" style="margin-top:8px;">
                   Accept for Hello Solar Direct Install
@@ -1264,6 +1993,10 @@
               <div class="detail-item">
                 <span>Customer Name</span>
                 <strong id="drawerOverviewCustomer">Maria Elena Cruz</strong>
+              </div>
+              <div class="detail-item">
+                <span>Payment Type</span>
+                <strong id="drawerPaymentType">Full Payment</strong>
               </div>
               <div class="detail-item">
                 <span>Project Location</span>
@@ -1435,6 +2168,7 @@
 
       <div class="drawer-foot">
         <div id="drawerContextActions" style="display:flex; align-items:center; gap:8px;"></div>
+        <div id="drawerEngineerActions" style="display:flex; align-items:center; gap:8px;"></div>
         <div style="display:flex; align-items:center; gap:10px;">
           <span style="font-size:11px; color:var(--muted);" id="drawerUpdated">Updated 25 mins ago</span>
           <button class="btn btn-secondary" id="drawerDoneBtn">Close</button>
@@ -1480,11 +2214,9 @@
 
         <div class="form-group">
           <label class="form-label">Select Partner Installer</label>
-          <select class="input-field" id="apmInstallerSelect" style="width:100%;">
-            <option value="SolarTech Visayas Solutions">SolarTech Visayas Solutions (Rating 4.8 ★ • 2 Active)</option>
-            <option value="SunPower Masters Cebu">SunPower Masters Cebu (Rating 4.7 ★ • 2 Active)</option>
-            <option value="GreenVolt Solutions Corp.">GreenVolt Solutions Corp. (Rating 4.3 ★ • 1 Active)</option>
-          </select>
+          <select class="input-field" id="apmInstallerSelect" style="width:100%;"></select>
+          <span class="sub-info" id="apmEmptyNote" style="display:none; margin-top:6px;">No Active partner installer
+            accounts. Activate or create one in Accounts → Installers first.</span>
         </div>
 
         <div class="form-group">
@@ -1496,6 +2228,57 @@
         <button class="btn btn-secondary" data-close-modal="assignPartnerModal">Cancel</button>
         <button class="btn btn-primary" id="btnConfirmAssignPartner">
           Confirm Partner Assignment
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4b. ASSIGN FINANCER MODAL (installment applications) -->
+  <div class="modal-overlay" id="assignFinancerModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">FINANCING GOVERNANCE</div>
+          <h2>Assign Financer</h2>
+        </div>
+        <button class="modal-close-btn" data-close-modal="assignFinancerModal">×</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:12.5px; color:var(--muted); margin:0 0 16px;">
+          Send this installment application to an active financer for review. Only financers with an Active contract are
+          listed.
+        </p>
+
+        <div class="detail-grid" style="margin-bottom:16px;">
+          <div class="detail-item">
+            <span>Application ID</span>
+            <strong id="afmAppId">—</strong>
+          </div>
+          <div class="detail-item">
+            <span>Customer</span>
+            <strong id="afmCustomer">—</strong>
+          </div>
+          <div class="detail-item">
+            <span>Amount</span>
+            <strong id="afmAmount">—</strong>
+          </div>
+          <div class="detail-item">
+            <span>Current Financer</span>
+            <strong id="afmCurrent">—</strong>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="afmFinancerSelect">Select Financer</label>
+          <select class="input-field" id="afmFinancerSelect" style="width:100%;"></select>
+          <span class="sub-info" id="afmEmptyNote" style="display:none; margin-top:6px;">No financer has an Active
+            contract. Set up a contract in Accounts → Financers first.</span>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="assignFinancerModal">Cancel</button>
+        <button class="btn btn-primary" id="btnConfirmAssignFinancer">
+          Confirm Financer Assignment
         </button>
       </div>
     </div>
@@ -1657,6 +2440,9 @@
               style="font-size:12.5px; color:var(--ink-secondary); line-height:1.5; background:var(--bg); border:1px solid var(--line); border-radius:var(--radius-md); padding:12px;">
             </div>
           </div>
+
+          <!-- Installation Progress (read-only monitor; same record as Installer Portal / Direct Engineer) -->
+          <div class="form-group" id="imInstallProgressSummary" style="margin:14px 0 0; display:none;"></div>
         </div>
 
         <!-- 2. Schedule Tab -->
@@ -1903,12 +2689,152 @@
     </div>
   </div>
 
-  <!-- 5. PAYMENT DETAIL & REPAYMENT WORKSPACE MODAL -->
-  <div class="modal-overlay" id="paymentModal">
-    <div class="modal-card modal-lg">
+  <!-- 4B. REVIEW FULL PAYMENT RECEIPT MODAL -->
+  <div class="modal-overlay" id="reviewReceiptModal">
+    <div class="modal-card sa-modal" style="max-width: 600px; width: 100%;">
       <div class="modal-head">
         <div>
-          <div class="eyebrow" id="pmEyebrow">FINANCIAL MONITORING & REPAYMENT</div>
+          <div class="eyebrow">FULL PAYMENT VERIFICATION</div>
+          <div style="display:flex; align-items:center; gap:10px; margin-top:2px;">
+            <h2 id="rrTitle" style="margin:0;">Review Payment Receipt</h2>
+            <span id="rrStatusBadge" class="status-pill warn">Verification Required</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" data-close-modal="reviewReceiptModal">×</button>
+      </div>
+
+      <div class="modal-body">
+        <input type="hidden" id="rrAppId" />
+
+        <!-- Summary Details Grid -->
+        <div class="detail-grid sa-grid-3" style="margin-bottom:14px;">
+          <div class="detail-item">
+            <span>Application ID</span>
+            <strong id="rrAppIdText">APP-1031</strong>
+          </div>
+          <div class="detail-item">
+            <span>Customer Name</span>
+            <strong id="rrCustomer">Andrea Lim</strong>
+          </div>
+          <div class="detail-item">
+            <span>HS ID</span>
+            <strong id="rrHsId">HS-10023</strong>
+          </div>
+          <div class="detail-item">
+            <span>Total Amount</span>
+            <strong id="rrAmount" style="color:var(--brand); font-size:15px;">₱245,000</strong>
+          </div>
+          <div class="detail-item">
+            <span>Uploaded Date</span>
+            <strong id="rrUploadedDate">September 28, 2026</strong>
+          </div>
+          <div class="detail-item">
+            <span>Payment Channel</span>
+            <strong id="rrPaymentMethod">Bank Transfer (BDO)</strong>
+          </div>
+        </div>
+
+        <!-- Receipt Document Preview Card -->
+        <div class="panel"
+          style="padding:16px; margin-bottom:16px; background:#fbfbfb; border:1px solid var(--border); border-radius:var(--radius-md);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div
+              style="font-weight:700; font-size:12.5px; color:var(--ink); display:flex; align-items:center; gap:6px;">
+              <span>Uploaded Receipt</span>
+              <span id="rrReceiptFileBadge" class="status-pill neutral" style="font-size:10.5px;">Customer
+                Submission</span>
+            </div>
+            <a href="#" id="rrDownloadReceiptLink" target="_blank" class="btn btn-secondary btn-sm"
+              style="display:inline-flex; align-items:center; gap:4px; font-size:11.5px; text-decoration:none;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              View Document
+            </a>
+          </div>
+
+          <!-- Receipt Visual Container -->
+          <div id="rrReceiptPreviewBox"
+            style="background:#ffffff; border:1px dashed #cbd5e1; border-radius:6px; padding:16px; text-align:center;">
+            <div
+              style="max-width:380px; margin:0 auto; border:1px solid #e2e8f0; border-radius:8px; padding:16px; background:#fafafa; text-align:left; box-shadow:0 2px 4px rgba(0,0,0,0.03);">
+              <div
+                style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e2e8f0; padding-bottom:8px; margin-bottom:10px;">
+                <span style="font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase;">Transaction
+                  Receipt</span>
+                <span style="font-size:11px; color:var(--success); font-weight:700;">● Cleared Transfer</span>
+              </div>
+              <div style="font-size:13px; font-weight:700; color:var(--ink); margin-bottom:4px;" id="rrReceiptBankName">
+                BDO Unibank Direct Transfer</div>
+              <div style="font-size:11.5px; color:var(--muted); margin-bottom:8px;">Ref: <code id="rrReceiptRefNumber"
+                  style="font-family:monospace; color:var(--ink);">BDO-TXN-88219304</code></div>
+              <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
+                <span style="color:var(--muted);">Amount Paid:</span>
+                <strong id="rrReceiptAmountPaid" style="color:var(--ink);">₱245,000.00</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
+                <span style="color:var(--muted);">Beneficiary:</span>
+                <strong style="color:var(--ink);">Hello Solar Energy Corp.</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:12px;">
+                <span style="color:var(--muted);">Timestamp:</span>
+                <span id="rrReceiptTimestamp" style="color:var(--ink);">Sep 28, 2026 14:32</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer upload simulation box (for demonstration when receipt is pending) -->
+          <div id="rrUploadSimulationBox"
+            style="display:none; margin-top:12px; padding:12px; background:#f0f9ff; border:1px solid #bae6fd; border-radius:6px; font-size:12px;">
+            <div style="font-weight:600; color:#0369a1; margin-bottom:4px;">Receipt Awaiting Customer Upload</div>
+            <div style="color:#0c4a6e; margin-bottom:10px;">Customer has not submitted payment receipt yet. Simulate
+              customer bank transfer upload to advance to Verification Required.</div>
+            <button type="button" class="btn btn-secondary btn-sm" id="btnSimulateCustomerUpload"
+              style="font-size:11.5px;">
+              <span>↑</span> Simulate Customer Upload
+            </button>
+          </div>
+        </div>
+
+        <!-- Rejection Reason Input Box -->
+        <div id="rrRejectReasonBox"
+          style="display:none; margin-bottom:14px; background:#fff5f5; border:1px solid #fed7d7; padding:12px; border-radius:6px;">
+          <label for="rrRejectReasonInput"
+            style="display:block; font-size:12px; font-weight:700; color:#c53030; margin-bottom:6px;">
+            Rejection reason (customer will be asked to re-upload)
+          </label>
+          <input type="text" class="input-field" id="rrRejectReasonInput"
+            placeholder="e.g., Transfer amount does not match invoice, or receipt image is unreadable..."
+            style="width:100%; font-size:12px; margin-bottom:8px;" />
+          <div style="display:flex; justify-content:flex-end; gap:8px;">
+            <button type="button" class="btn btn-secondary btn-sm" id="btnCancelRejectReason">Cancel</button>
+            <button type="button" class="btn btn-danger btn-sm" id="btnConfirmRejectPayment">Confirm Rejection</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-foot" style="display:flex; justify-content:space-between; align-items:center;">
+        <button type="button" class="btn btn-secondary" data-close-modal="reviewReceiptModal">Close</button>
+        <div style="display:flex; gap:8px;">
+          <button type="button" class="btn btn-danger" id="btnRejectPayment">
+            Reject Payment
+          </button>
+          <button type="button" class="btn btn-primary" id="btnVerifyPayment">
+            Verify Payment
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. PAYMENT DETAIL & REPAYMENT WORKSPACE MODAL -->
+  <div class="modal-overlay" id="paymentModal">
+    <div class="modal-card modal-lg sa-modal">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow" id="pmEyebrow">PAYMENT DETAILS</div>
           <div style="display:flex; align-items:center; gap:10px; margin-top:2px;">
             <h2 id="pmTitle" style="margin:0;">Payment Details</h2>
             <span id="pmStatusBadge" class="status-pill success">On Time</span>
@@ -1930,10 +2856,26 @@
         <!-- 1. Summary Tab -->
         <div class="modal-tab-content active" id="pmTabContentSummary">
           <div id="pmStatusAlert" class="panel"
-            style="display:none; padding:12px 14px; margin-bottom:14px; border-radius:var(--radius-md); font-size:12.5px;">
+            style="display:none; padding:10px 14px; margin-bottom:12px; border-radius:var(--radius-md); font-size:12.5px;">
           </div>
 
-          <div class="detail-grid" id="pmSummaryGrid" style="margin-bottom:16px;">
+          <!-- Customer installment receipt awaiting verification (shared APP record) -->
+          <div id="pmReceiptReview" class="panel"
+            style="display:none; padding:12px 14px; margin-bottom:12px; border-radius:var(--radius-md); font-size:12.5px; background:#eff6ff; border:1px solid #bfdbfe; color:#1e3a8a;">
+            <div id="pmReceiptReviewText"></div>
+            <div class="form-group" style="margin:10px 0 0;">
+              <label class="form-label" for="pmReceiptRejectReason">Reason (required to reject)</label>
+              <input class="input-field" id="pmReceiptRejectReason" style="width:100%;"
+                placeholder="e.g. Amount does not match the billing period" />
+            </div>
+            <div style="display:flex; gap:8px; margin-top:10px;">
+              <button class="btn btn-primary btn-sm" id="btnVerifyInstallmentReceipt">Verify Payment</button>
+              <button class="btn btn-secondary btn-sm" id="btnRejectInstallmentReceipt">Reject · Re-upload
+                Required</button>
+            </div>
+          </div>
+
+          <div class="detail-grid" id="pmSummaryGrid" style="margin-bottom:12px;">
             <div class="detail-item">
               <span>Application ID</span>
               <strong id="pmAppIdText">APP-1024</strong>
@@ -1947,15 +2889,27 @@
               <strong id="pmFinancer">SunFund Philippines</strong>
             </div>
             <div class="detail-item">
+              <span>Funding Owner</span>
+              <div id="pmFundingOwner">—</div>
+            </div>
+            <div class="detail-item">
               <span>Funded Amount</span>
               <strong id="pmAmount">₱315,000</strong>
+            </div>
+            <div class="detail-item">
+              <span>Contract Status</span>
+              <div id="pmContractStatus">—</div>
+            </div>
+            <div class="detail-item">
+              <span>Contract End Date</span>
+              <strong id="pmContractEnd">—</strong>
             </div>
             <div class="detail-item">
               <span>Monthly Payment</span>
               <strong id="pmMonthly">₱7,200 / mo</strong>
             </div>
             <div class="detail-item">
-              <span>Current Payment Status</span>
+              <span>Payment Status</span>
               <div id="pmStatusContainer"><span id="pmStatus" class="status-pill success">On Time</span></div>
             </div>
             <div class="detail-item">
@@ -1977,17 +2931,16 @@
           </div>
 
           <!-- Administrative Payment Action Panel -->
-          <div class="panel"
-            style="background:#fafafa; border:1px solid var(--line); border-radius:var(--radius-md); padding:16px;">
+          <div class="panel" id="pmAdminActionPanel"
+            style="background:var(--surface-subtle); border:1px solid var(--border); border-radius:var(--radius-md); padding:12px 16px;">
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-              <div>
-                <div style="font-weight:700; font-size:12.5px; color:var(--ink);">Super Admin Financial Action</div>
+              <div style="min-width:240px; flex:1;">
+                <div style="font-weight:700; font-size:12.5px; color:var(--ink);">Record a payment or note</div>
                 <div style="font-size:11.5px; color:var(--muted); margin-top:2px;">
-                  Manually record received installment or payment settlement. Requires confirmation and logs to audit
-                  trail.
+                  Confirmed before saving and logged to the audit trail.
                 </div>
               </div>
-              <div style="display:flex; gap:8px;">
+              <div style="display:flex; gap:8px; flex-shrink:0;">
                 <button class="btn btn-outline-secondary btn-sm" id="btnOpenAdjustPaymentModal">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round"
@@ -2012,8 +2965,7 @@
         <!-- 2. Schedule Tab -->
         <div class="modal-tab-content" id="pmTabContentSchedule">
           <div style="margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;">
-            <div style="font-size:12px; color:var(--muted);">Amortization schedule calculated from financing agreement:
-            </div>
+            <div style="font-size:12px; color:var(--muted);">Amortization schedule from the financing agreement</div>
             <span id="pmScheduleSummaryBadge" class="status-pill neutral">Schedule</span>
           </div>
           <div class="table-container" style="max-height: 380px; overflow-y: auto;">
@@ -2036,8 +2988,7 @@
         <!-- 3. History Tab -->
         <div class="modal-tab-content" id="pmTabContentHistory">
           <div style="margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;">
-            <div style="font-size:12px; color:var(--muted);">Chronological ledger of verified payments received and
-              cleared:</div>
+            <div style="font-size:12px; color:var(--muted);">Verified payments received</div>
             <button class="btn btn-secondary btn-sm" id="btnHistoryAddPayment"><span>+</span> Record Payment</button>
           </div>
           <div class="table-container" style="max-height: 380px; overflow-y: auto;">
@@ -2059,8 +3010,8 @@
 
         <!-- 4. Activity Tab -->
         <div class="modal-tab-content" id="pmTabContentActivity">
-          <div style="margin-bottom:12px; font-size:12px; color:var(--muted);">
-            Payment-related status changes, administrative actions, and financer updates:
+          <div style="margin-bottom:10px; font-size:12px; color:var(--muted);">
+            Payment status changes and admin actions
           </div>
           <div class="drawer-timeline" id="pmActivityTimeline"
             style="padding-top:6px; max-height: 380px; overflow-y: auto;"></div>
@@ -2075,7 +3026,7 @@
 
   <!-- 5B. RECORD PAYMENT CONFIRMATION MODAL -->
   <div class="modal-overlay" id="recordPaymentConfirmModal">
-    <div class="modal-card">
+    <div class="modal-card sa-modal">
       <div class="modal-head">
         <div>
           <div class="eyebrow">FINANCIAL AUDIT ACTION</div>
@@ -2141,9 +3092,8 @@
 
         <div
           style="font-size:11.5px; color:var(--muted); line-height:1.4; background:var(--bg); padding:10px 12px; border-radius:var(--radius-sm); border:1px solid var(--line);">
-          ℹ <strong>Audit Confirmation:</strong> Recording this payment will update remaining loan debt, recalculate
-          repayment health, advance the due schedule, and permanently log an audit trail entry. Payment history will not
-          be overwritten.
+          Recording this payment updates the remaining balance and due schedule and is logged to the audit trail.
+          Existing payment history is never overwritten.
         </div>
       </div>
       <div class="modal-foot">
@@ -2157,7 +3107,7 @@
 
   <!-- 5C. PAYMENT ADJUSTMENT NOTE MODAL -->
   <div class="modal-overlay" id="paymentAdjustModal">
-    <div class="modal-card">
+    <div class="modal-card sa-modal">
       <div class="modal-head">
         <div>
           <div class="eyebrow">AUDIT LOG ADJUSTMENT</div>
@@ -2201,17 +3151,17 @@
 
   <!-- 6. SUPPORT TICKET MANAGE MODAL -->
   <div class="modal-overlay" id="supportModal">
-    <div class="modal-card modal-lg">
+    <div class="modal-card modal-lg sa-modal">
       <div class="modal-head">
         <div>
-          <div class="eyebrow">SUPPORT TICKET WORKSPACE</div>
-          <div style="display:flex; align-items:center; gap:10px; margin-top:2px;">
-            <h2 id="smTitle" style="margin:0;">Ticket SUP-044</h2>
-            <span id="smStatusBadge" class="status-pill warn">In Progress</span>
-            <span id="smPriorityBadge" class="status-pill danger">High</span>
+          <div class="eyebrow">SUPPORT TICKET</div>
+          <div class="sa-head-row">
+            <h2 id="smTitle">Ticket</h2>
+            <span id="smStatusBadge" class="status-pill warn">Open</span>
+            <span id="smPriorityBadge" class="status-pill neutral">Priority</span>
           </div>
         </div>
-        <button class="modal-close-btn" data-close-modal="supportModal">×</button>
+        <button class="modal-close-btn" data-close-modal="supportModal" aria-label="Close">×</button>
       </div>
 
       <div class="modal-tabs-bar" id="supportModalTabs">
@@ -2222,134 +3172,110 @@
 
       <div class="modal-body">
         <input type="hidden" id="smTicketId" />
+        <!-- Legacy aliases (ticket ID and status are shown in the header) -->
+        <span id="smDetailTicketId" hidden></span>
+        <span id="smCurrentStatusPill" hidden></span>
 
         <!-- Tab 1: Overview -->
         <div class="modal-tab-content active" id="spTabContentOverview">
-          <div class="detail-grid">
-            <div class="detail-item">
-              <span>Ticket ID</span>
-              <strong id="smDetailTicketId">SUP-044</strong>
-            </div>
+          <div class="detail-grid sa-grid-4">
             <div class="detail-item">
               <span>Account Type</span>
-              <strong id="smAccountType">Installer</strong>
+              <strong id="smAccountType">—</strong>
             </div>
             <div class="detail-item">
-              <span>Account / Requester</span>
-              <strong id="smAccountName">GreenVolt Solutions Corp.</strong>
+              <span>Requester</span>
+              <strong id="smAccountName">—</strong>
             </div>
             <div class="detail-item">
-              <span>Related Project / Account</span>
+              <span>Related Record</span>
               <div id="smRelatedContainer">
                 <button class="record-link-btn" id="smRelatedBtn" data-open-record="">-</button>
               </div>
             </div>
-            <div class="detail-item" style="grid-column: span 2;">
-              <span>Reported Concern</span>
-              <div id="smConcern"
-                style="background:#fdfbf8; border:1px solid var(--line); border-radius:var(--radius-md); padding:10px 12px; font-size:13px; font-weight:600; color:var(--ink); margin-top:4px;">
-              </div>
-            </div>
             <div class="detail-item">
-              <span>Priority Level</span>
-              <select class="input-field" id="smPrioritySelect" style="width:100%; margin-top:4px;">
-                <option value="High">High</option>
-                <option value="Medium">Medium</option>
-                <option value="Low">Low</option>
-              </select>
-            </div>
-            <div class="detail-item">
-              <span>Current Status</span>
-              <div style="margin-top:4px;"><span id="smCurrentStatusPill" class="status-pill warn">In Progress</span>
-              </div>
-            </div>
-            <div class="detail-item">
-              <span>Created Date / Time</span>
-              <strong id="smCreatedTime">3 hours ago</strong>
-            </div>
-            <div class="detail-item">
-              <span>Assigned Admin</span>
-              <select class="input-field" id="smAssignedAdminSelect" style="width:100%; margin-top:4px;">
-                <option value="ADMIN (Limuel)">ADMIN (Limuel)</option>
-                <option value="ADMIN (Operations Desk)">ADMIN (Operations Desk)</option>
-                <option value="Unassigned">Unassigned</option>
-              </select>
+              <span>Created</span>
+              <strong id="smCreatedTime">—</strong>
             </div>
           </div>
 
-          <!-- Workflow Section -->
-          <div id="smWorkflowBox" style="margin-top:16px; padding-top:16px; border-top:1px solid var(--line);">
-            <!-- Open/In Progress Controls -->
+          <div class="sa-section">
+            <div class="sa-section-title">Concern</div>
+            <div id="smConcern" class="sa-box sa-box-strong"></div>
+          </div>
+
+          <!-- Workflow -->
+          <div id="smWorkflowBox">
+            <!-- Open / In Progress -->
             <div id="smActiveControls">
-              <div class="form-group" style="margin-bottom:12px;">
-                <label class="form-label">Support Stage & Workflow Status</label>
-                <select class="input-field" id="smStatusSelect" style="width:100%;">
-                  <option value="Open">Open (Pending Triage)</option>
-                  <option value="In Progress">In Progress (Active Investigation / Resolution)</option>
-                  <option value="Resolved">Resolved (Issue Addressed & Closed)</option>
-                </select>
+              <div class="sa-form-row-3">
+                <div class="form-group">
+                  <label class="form-label" for="smStatusSelect">Status</label>
+                  <select class="input-field" id="smStatusSelect">
+                    <option value="Open">Open</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Resolved">Resolved</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="smPrioritySelect">Priority</label>
+                  <select class="input-field" id="smPrioritySelect">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="smAssignedAdminSelect">Assigned To</label>
+                  <select class="input-field" id="smAssignedAdminSelect">
+                    <option value="ADMIN (Limuel)">ADMIN (Limuel)</option>
+                    <option value="ADMIN (Operations Desk)">ADMIN (Operations Desk)</option>
+                    <option value="Unassigned">Unassigned</option>
+                  </select>
+                </div>
               </div>
 
-              <!-- Required Resolution Note when resolving -->
-              <div class="form-group" id="smResolutionGroup" style="display:none; margin-bottom:12px;">
-                <label class="form-label" style="color:var(--accent); font-weight:700;">Resolution Note <span
-                    style="color:var(--danger)">* Required for Resolution</span></label>
-                <textarea class="input-field" id="smResolutionInput"
-                  placeholder="Specify how this concern was resolved and confirmed with requester..."
-                  style="width:100%; min-height:75px; resize:vertical;"></textarea>
-                <div id="smResolutionError"
-                  style="display:none; color:var(--danger); font-size:12px; margin-top:4px; font-weight:600;">A
-                  resolution note is required to resolve this ticket.</div>
+              <!-- Required when resolving -->
+              <div class="form-group" id="smResolutionGroup" style="display:none;">
+                <label class="form-label" for="smResolutionInput">Resolution Note <span
+                    style="color:var(--danger)">*</span></label>
+                <textarea class="input-field sa-textarea" id="smResolutionInput" rows="2"
+                  placeholder="How was this resolved and confirmed with the requester?"></textarea>
+                <div id="smResolutionError" class="sa-field-error" style="display:none;">A resolution note is required
+                  to resolve this ticket.</div>
               </div>
 
               <div class="form-group" id="smGeneralNoteGroup" style="margin-bottom:0;">
-                <label class="form-label">Update Remarks / Administrative Note</label>
-                <textarea class="input-field" id="smNotesInput" placeholder="Add internal progress note..."
-                  style="width:100%; min-height:60px; resize:vertical;"></textarea>
+                <label class="form-label" for="smNotesInput">Internal Note <span
+                    class="sa-optional">(optional)</span></label>
+                <textarea class="input-field sa-textarea" id="smNotesInput" rows="2"
+                  placeholder="Add a progress note..."></textarea>
               </div>
             </div>
 
-            <!-- Resolved Controls & Summary -->
+            <!-- Resolved -->
             <div id="smResolvedControls" style="display:none;">
-              <div class="panel"
-                style="background:#f4f9f4; border:1px solid #c2e2c2; border-radius:var(--radius-md); padding:14px; margin-bottom:12px;">
-                <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
-                  <span
-                    style="color:var(--success); font-weight:700; font-size:14px; display:inline-flex; align-items:center;">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                  </span>
-                  <strong style="color:#1b5e20; font-size:13px;">Ticket Resolved</strong>
-                  <span style="font-size:11.5px; color:var(--muted); margin-left:auto;">By <span id="smResolvedBy">ADMIN
-                      (Limuel)</span> on <span id="smResolvedAt">-</span></span>
+              <div class="sa-card sa-card-success">
+                <div class="sa-card-head">
+                  <strong class="sa-card-title" style="color:#14532D;">✓ Resolved</strong>
+                  <span class="sa-muted-sm">by <span id="smResolvedBy">—</span> · <span
+                      id="smResolvedAt">—</span></span>
                 </div>
-                <div style="font-size:12.5px; color:var(--ink); line-height:1.45;">
-                  <strong>Resolution:</strong> <span id="smResolvedNote">-</span>
-                </div>
+                <div class="sa-note" style="color:var(--ink);"><strong>Resolution:</strong> <span
+                    id="smResolvedNote">-</span></div>
               </div>
 
-              <div id="smReopenTriggerBox">
-                <button type="button" class="btn btn-secondary btn-sm" id="btnShowReopenForm">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    style="display:inline-block; vertical-align:-2px; margin-right:4px;">
-                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
-                    <path d="M3 3v5h5"></path>
-                  </svg>Reopen Ticket
-                </button>
+              <div id="smReopenTriggerBox" style="margin-top:10px;">
+                <button type="button" class="btn btn-secondary btn-sm" id="btnShowReopenForm">Reopen Ticket</button>
               </div>
 
-              <div id="smReopenBox"
-                style="display:none; background:#fdfbf8; border:1px solid var(--line); border-radius:var(--radius-md); padding:14px; margin-top:10px;">
-                <label class="form-label" style="font-weight:700;">Reopening Reason</label>
-                <input type="text" class="input-field" id="smReopenReasonInput"
-                  placeholder="Reason for reopening this ticket (e.g. customer follow-up, recurring issue)..."
-                  style="width:100%; margin-bottom:10px;" />
-                <div style="display:flex; gap:8px;">
-                  <button type="button" class="btn btn-primary btn-sm" id="btnConfirmReopen">Confirm Reopen</button>
+              <div id="smReopenBox" class="sa-card" style="display:none; margin-top:10px;">
+                <label class="form-label" for="smReopenReasonInput">Reason for reopening</label>
+                <input type="text" class="input-field" id="smReopenReasonInput" style="width:100%;"
+                  placeholder="e.g. Customer follow-up, recurring issue" />
+                <div class="sa-card-foot" style="justify-content:flex-end;">
                   <button type="button" class="btn btn-secondary btn-sm" id="btnCancelReopen">Cancel</button>
+                  <button type="button" class="btn btn-primary btn-sm" id="btnConfirmReopen">Confirm Reopen</button>
                 </div>
               </div>
             </div>
@@ -2358,20 +3284,15 @@
 
         <!-- Tab 2: Conversation -->
         <div class="modal-tab-content" id="spTabContentConversation">
-          <div id="smMessagesList"
-            style="display:flex; flex-direction:column; gap:10px; max-height:360px; overflow-y:auto; padding:4px 0 14px 0;">
-          </div>
-
-          <div class="panel"
-            style="background:#fdfbf8; border:1px solid var(--line); border-radius:var(--radius-md); padding:14px; margin-top:10px;">
-            <label class="form-label" style="font-weight:700; display:flex; justify-content:space-between;">
-              <span>Reply to Requester (<span id="smReplyRecipient">-</span>)</span>
-              <span style="font-size:11px; font-weight:400; color:var(--muted);">Responses logged to ticket
-                history</span>
+          <div id="smMessagesList" class="sa-thread"></div>
+          <div class="sa-card" style="margin-top:10px;">
+            <label class="form-label sa-label-row" for="smReplyInput">
+              <span>Reply to <span id="smReplyRecipient">-</span></span>
+              <span class="sa-muted-sm">Saved to ticket history</span>
             </label>
-            <textarea class="input-field" id="smReplyInput" placeholder="Type your response to the requester here..."
-              style="width:100%; min-height:75px; resize:vertical; margin-bottom:10px;"></textarea>
-            <div style="display:flex; justify-content:flex-end;">
+            <textarea class="input-field sa-textarea" id="smReplyInput" rows="3"
+              placeholder="Type your reply..."></textarea>
+            <div class="sa-card-foot" style="justify-content:flex-end;">
               <button type="button" class="btn btn-primary btn-sm" id="btnSendTicketReply">Send Reply</button>
             </div>
           </div>
@@ -2379,8 +3300,7 @@
 
         <!-- Tab 3: Activity -->
         <div class="modal-tab-content" id="spTabContentActivity">
-          <div class="timeline" id="smActivityTimeline" style="padding:10px 0; max-height:460px; overflow-y:auto;">
-          </div>
+          <div class="timeline" id="smActivityTimeline" style="padding:6px 0; max-height:420px; overflow-y:auto;"></div>
         </div>
       </div>
 
@@ -2482,6 +3402,156 @@
     </div>
   </div>
 
+  <!-- 7B-0. INSTALLATION COST MODAL (Hello Solar Direct only) -->
+  <div class="modal-overlay" id="installationCostModal" role="dialog" aria-modal="true" aria-labelledby="icTitle">
+    <div class="modal-card sa-modal" style="max-width:480px;">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">INSTALLATION COST · HELLO SOLAR DIRECT</div>
+          <h2 id="icTitle">APP ID</h2>
+        </div>
+        <button class="modal-close-btn" data-close-modal="installationCostModal" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="icAppId" />
+        <div class="sa-muted-sm" id="icSubtitle" style="margin-bottom:12px;">—</div>
+        <div class="sa-form-row-3">
+          <div class="form-group">
+            <label class="form-label" for="icMaterialsInput">Materials (₱)</label>
+            <input type="number" class="input-field sa-num" id="icMaterialsInput" min="0" step="0.01"
+              inputmode="decimal" placeholder="0.00" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="icLaborInput">Labor (₱)</label>
+            <input type="number" class="input-field sa-num" id="icLaborInput" min="0" step="0.01" inputmode="decimal"
+              placeholder="0.00" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="icTransportInput">Transport / Misc (₱)</label>
+            <input type="number" class="input-field sa-num" id="icTransportInput" min="0" step="0.01"
+              inputmode="decimal" placeholder="0.00" />
+          </div>
+        </div>
+        <div class="sa-total-row">
+          <span>Total Cost</span>
+          <strong id="icTotalText">₱0.00</strong>
+        </div>
+        <div id="icError" class="sa-field-error" style="display:none;"></div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="installationCostModal">Cancel</button>
+        <button class="btn btn-primary" id="btnSaveInstallationCost">Save Cost</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7B-3. IMMEDIATE SYSTEM DISCONNECT CONFIRMATION (Super Admin only; request is sent to backend) -->
+  <div class="modal-overlay" id="systemDisconnectModal">
+    <div class="modal-card sa-modal">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow" style="color:var(--danger);">IMMEDIATE SYSTEM DISCONNECT</div>
+          <h2>Request System Disconnect?</h2>
+        </div>
+        <button class="modal-close-btn" data-close-modal="systemDisconnectModal">×</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="sdAppId" />
+        <div class="detail-grid" style="margin-bottom:14px;">
+          <div class="detail-item"><span>Application ID</span><strong id="sdAppIdText">—</strong></div>
+          <div class="detail-item"><span>HS ID</span><strong id="sdHsIdText">—</strong></div>
+          <div class="detail-item"><span>Customer</span><strong id="sdCustomerText">—</strong></div>
+          <div class="detail-item"><span>Current Connection</span><strong id="sdStatusText">—</strong></div>
+        </div>
+        <div
+          style="font-size:12px; line-height:1.5; padding:10px 12px; border-radius:var(--radius-sm); background:#fff2f0; border:1px solid #ffccc7; color:#a8071a; margin-bottom:12px;">
+          Sends a request to the backend / inverter API. Status stays <strong>Disconnect Requested</strong> until the
+          backend confirms. The request is recorded in the Activity Log.
+        </div>
+        <div class="form-group" style="margin-bottom:10px;">
+          <label class="form-label" for="sdReasonInput">Reason for disconnect <span
+              style="color: var(--primary);">*</span></label>
+          <textarea class="input-field" id="sdReasonInput" rows="3" style="width:100%; resize:vertical;"
+            placeholder="e.g. Safety hazard reported on site / Non-payment escalation approved by finance"></textarea>
+        </div>
+        <label
+          style="display:flex; gap:8px; align-items:flex-start; font-size:12.5px; color:var(--ink-secondary); cursor:pointer;">
+          <input type="checkbox" id="sdConfirmCheck" style="margin-top:2px;" />
+          <span>I confirm that <strong id="sdConfirmIds">—</strong> is the correct system to disconnect.</span>
+        </label>
+        <div id="sdError"
+          style="display:none; margin-top:10px; padding:10px 14px; border-radius:var(--radius-md); font-size:12.5px; background:#fff2f0; border:1px solid #ffccc7; color:#cf1322;">
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="systemDisconnectModal">Cancel</button>
+        <button class="btn" id="btnConfirmSystemDisconnect"
+          style="background:#b91c1c; color:#fff; border:1px solid #991b1b;">Request Disconnect</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7B-2. FINANCER CONTRACT MODAL -->
+  <div class="modal-overlay" id="financerContractModal">
+    <div class="modal-card sa-modal">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">FINANCER CONTRACT</div>
+          <h2 id="fcFinancerName">Financer</h2>
+        </div>
+        <button class="modal-close-btn" data-close-modal="financerContractModal">×</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="fcFinancerId" />
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px;">
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="fcTermInput">Contract Term (months) <span
+                style="color: var(--primary);">*</span></label>
+            <input type="number" class="input-field" id="fcTermInput" min="1" max="360" step="1" placeholder="e.g. 36"
+              style="width:100%;" />
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="fcRateInput">Annual Rate (%) <span
+                style="color: var(--primary);">*</span></label>
+            <input type="number" class="input-field" id="fcRateInput" min="0" max="100" step="0.01"
+              placeholder="e.g. 8.5" style="width:100%;" />
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="fcStartInput">Contract Start Date <span
+                style="color: var(--primary);">*</span></label>
+            <input type="date" class="input-field" id="fcStartInput" style="width:100%;" />
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="fcEndInput">Contract End Date <span
+                style="color: var(--primary);">*</span></label>
+            <input type="date" class="input-field" id="fcEndInput" style="width:100%;" />
+          </div>
+          <div class="form-group" style="margin-bottom:0; grid-column:1 / -1;">
+            <label class="form-label" for="fcStatusOverride">Contract Status</label>
+            <select class="input-field" id="fcStatusOverride" style="width:100%;">
+              <option value="">Automatic (based on start / end dates)</option>
+              <option value="Terminated">Terminated early</option>
+            </select>
+          </div>
+        </div>
+        <div style="font-size:11.5px; color:var(--muted); margin-top:10px;">
+          End date auto-fills from start date + term. While the contract is Active, the financer is the funding/revenue
+          owner of its financed applications; once it expires or is terminated, ownership reverts to Hello Solar.
+        </div>
+        <div id="fcOwnerPreview" class="panel"
+          style="margin-top:12px; padding:10px 14px; border-radius:var(--radius-md); font-size:12.5px; background:#fafafa; border:1px solid var(--line);">
+        </div>
+        <div id="fcError"
+          style="display:none; margin-top:10px; padding:10px 14px; border-radius:var(--radius-md); font-size:12.5px; background:#fff2f0; border:1px solid #ffccc7; color:#cf1322;">
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" data-close-modal="financerContractModal">Cancel</button>
+        <button class="btn btn-primary" id="btnSaveFinancerContract">Save Contract</button>
+      </div>
+    </div>
+  </div>
+
   <!-- 7C. EXPORT DIRECTORY MODAL -->
   <div class="modal-overlay" id="exportAccountsModal">
     <div class="modal-card">
@@ -2521,6 +3591,195 @@
       <div class="modal-foot">
         <button class="btn btn-secondary" data-close-modal="exportAccountsModal">Cancel</button>
         <button class="btn btn-primary" id="btnExecuteExportAccounts">Download CSV</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7D. CONTACT INQUIRY DETAIL & REPLY MODAL -->
+  <div class="modal-overlay" id="inquiryModal">
+    <div class="modal-card modal-lg sa-modal">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">CONTACT INQUIRY</div>
+          <div class="sa-head-row">
+            <h2 id="inqModalTitle">Inquiry Details</h2>
+            <span id="inqModalStatusBadge" class="status-pill warn">Unread</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" data-close-modal="inquiryModal" aria-label="Close">×</button>
+      </div>
+
+      <div class="modal-body">
+        <input type="hidden" id="inqModalId" />
+
+        <!-- Sender & Inquiry Summary -->
+        <div class="detail-grid sa-grid-3">
+          <div class="detail-item">
+            <span>Inquiry ID</span>
+            <strong id="inqDetailId">—</strong>
+          </div>
+          <div class="detail-item">
+            <span>Received</span>
+            <strong id="inqDetailTime">—</strong>
+          </div>
+          <div class="detail-item">
+            <span>Message Status</span>
+            <div><span id="inqDetailMessageStatus" class="status-pill warn">Unread</span></div>
+          </div>
+          <div class="detail-item">
+            <span>Name</span>
+            <strong id="inqDetailName">—</strong>
+          </div>
+          <div class="detail-item">
+            <span>Email</span>
+            <a href="#" id="inqDetailEmail" class="sa-link">—</a>
+          </div>
+          <div class="detail-item">
+            <span>Phone</span>
+            <a href="#" id="inqDetailPhone" class="sa-link sa-link-ink">—</a>
+          </div>
+          <div class="detail-item">
+            <span>Location</span>
+            <strong id="inqDetailLocation">—</strong>
+          </div>
+          <div class="detail-item inq-customer-only">
+            <span>Solar Model</span>
+            <strong id="inqDetailModel">—</strong>
+          </div>
+          <div class="detail-item inq-customer-only">
+            <span>Monthly Bill</span>
+            <strong id="inqDetailElectricBill">—</strong>
+          </div>
+          <div class="detail-item inq-customer-only">
+            <span>Payment Preference</span>
+            <strong id="inqDetailPaymentPreference">—</strong>
+          </div>
+          <div class="detail-item inq-customer-only sa-span-2">
+            <span>Inquiry Status</span>
+            <div class="sa-inline">
+              <span id="inqDetailCustomerResponse" class="status-pill warn">Awaiting Response</span>
+              <span id="inqDetailInquiryStatus" class="sa-muted-sm"></span>
+            </div>
+          </div>
+          <!-- Hidden fallback aliases for legacy compatibility -->
+          <span id="inqDetailCategory" hidden></span>
+          <span id="inqDetailPackage" hidden></span>
+        </div>
+
+        <!-- Submitted Message -->
+        <div class="sa-section">
+          <div class="sa-section-title">Message</div>
+          <div class="sa-box">
+            <div id="inqDetailSubject" class="sa-box-title">—</div>
+            <div id="inqDetailMessage" class="sa-prewrap">—</div>
+          </div>
+        </div>
+
+        <!-- Partner Inquiry Review (Financer / Installer / Merchant) -->
+        <div id="inqPartnerPanel" class="sa-section sa-card" style="display:none;">
+          <div class="sa-card-head">
+            <div class="sa-inline">
+              <strong class="sa-card-title">Partner Review</strong>
+              <span id="inqPartnerType" class="status-pill direct">Partner</span>
+              <span id="inqPartnerStatus" class="status-pill warn">Pending Review</span>
+            </div>
+            <div class="sa-inline">
+              <button type="button" class="btn btn-primary btn-sm" id="btnApprovePartnerInquiry">Approve
+                Inquiry</button>
+              <button type="button" class="btn btn-secondary btn-sm" id="btnCreatePartnerAccount"
+                style="display:none;">Create Account</button>
+            </div>
+          </div>
+          <div class="detail-grid sa-grid-3 sa-grid-flat" id="inqPartnerFinancerRow">
+            <div class="detail-item"><span>Contract Term</span><strong id="inqPartnerTerm">—</strong></div>
+            <div class="detail-item"><span>Annual Rate</span><strong id="inqPartnerRate">—</strong></div>
+            <div class="detail-item"><span>Contract Start</span><strong id="inqPartnerStart">—</strong></div>
+          </div>
+          <div id="inqPartnerNote" class="sa-note"></div>
+        </div>
+
+        <!-- Inquiry Confirmation (Customer inquiries only) -->
+        <div class="inquiry-email-flow-card sa-section sa-card">
+          <div class="sa-card-head">
+            <div class="sa-inline">
+              <strong class="sa-card-title">Inquiry Confirmation</strong>
+              <span id="inqEmailStatusBadge" class="status-pill warn">Not Sent</span>
+              <span id="inqCustomerResponseCardBadge" class="status-pill warn">Awaiting Response</span>
+            </div>
+            <span id="inqLinkStatusNote" class="sa-muted-sm">Email not yet sent</span>
+          </div>
+          <div id="inqEmailStatusDesc" class="sa-note" style="margin-bottom:10px;">
+            Send the confirmation link so the customer can choose Proceed or Not Proceeding.
+          </div>
+
+          <div class="form-group" style="margin-bottom:8px;">
+            <label class="form-label sa-label-row" for="inqConfirmationMessageInput">
+              <span>Message sent with the link</span>
+              <span class="sa-muted-sm" id="inqConfirmationMessageMeta">Shown exactly on the customer's confirmation
+                page</span>
+            </label>
+            <textarea class="input-field sa-textarea" id="inqConfirmationMessageInput" rows="5" maxlength="2000"
+              placeholder="Write the message the customer will see with the confirmation link..."></textarea>
+            <div class="form-error" id="errInqConfirmationMessage">Please enter a message before saving or sending.
+            </div>
+          </div>
+
+          <!-- Confirmation link stays internal: it is added to the customer email on Send / Resend -->
+          <input type="hidden" id="inqConfirmationLinkInput" value="" />
+          <div class="sa-note sa-link-note">
+            <span aria-hidden="true">🔒</span>
+            The customer's secure Inquiry Confirmation link is added to the email automatically.
+          </div>
+
+          <div class="sa-card-foot">
+            <div class="sa-preview-actions" aria-label="Customer actions on the confirmation page">
+              <span class="sa-muted-sm">Customer options:</span>
+              <button type="button" class="sa-chip sa-chip-success" id="btnCustomerSimulateProceed" disabled
+                aria-disabled="true">Proceed</button>
+              <button type="button" class="sa-chip sa-chip-danger" id="btnCustomerSimulateNotProceed" disabled
+                aria-disabled="true">Not Proceeding</button>
+            </div>
+            <div class="sa-inline">
+              <button type="button" class="btn btn-secondary btn-sm" id="btnSaveInquiryConfirmationMessage">Save
+                Message</button>
+              <button type="button" class="btn btn-primary btn-sm" id="btnSendInquiryConfirmationEmail">
+                <span id="btnSendInquiryConfirmationEmailText">Send Confirmation Email</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Replied banner (shown when status is Replied) -->
+        <div id="inqRepliedBanner" class="sa-section sa-card sa-card-success" style="display:none;">
+          <div class="sa-card-head">
+            <div class="sa-inline">
+              <strong class="sa-card-title" style="color:#14532D;">✓ Replied</strong>
+              <span class="sa-muted-sm">by <span id="inqRepliedBy">—</span> · <span id="inqRepliedAt">—</span></span>
+            </div>
+            <button type="button" class="btn btn-secondary btn-sm" id="btnInquiryMarkUnread">Mark as Unread</button>
+          </div>
+          <div class="sa-note" style="color:var(--ink);"><strong>Note:</strong> <span id="inqRepliedNote">-</span></div>
+        </div>
+
+        <!-- Reply note (shown when status is Unread) -->
+        <div id="inqReplyForm" class="sa-section sa-card">
+          <div class="sa-card-head">
+            <strong class="sa-card-title">Reply Note</strong>
+            <a href="#" id="btnInquiryEmailCompose" class="btn btn-secondary btn-sm" target="_blank"
+              rel="noopener">Reply via Email</a>
+          </div>
+          <textarea class="input-field sa-textarea" id="inqReplyNoteInput" rows="2"
+            placeholder="How was this inquiry handled? e.g. Emailed quotation, called back..."></textarea>
+          <div class="sa-card-foot" style="justify-content:flex-end;">
+            <button type="button" class="btn btn-primary btn-sm" id="btnInquiryMarkReplied">Mark as Replied</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-foot">
+        <button type="button" class="btn btn-secondary" id="btnInquiryClose"
+          data-close-modal="inquiryModal">Close</button>
+        <button type="button" class="btn btn-primary" id="btnInquiryCreateCustomer">Create Customer Account</button>
       </div>
     </div>
   </div>
@@ -2577,8 +3836,9 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <!-- Scripts -->
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <script src="data.js?v=20261006-api"></script>
+  <script src="../shared/hello-solar-shared.js"></script>
+  <script src="app.js?v=20261006-api"></script>
 </body>
 
 </html>
